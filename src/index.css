@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+:root {
+  --color-accent: #d52027;
+  --color-dark: #141024;
+  --color-light: #fff;
+  --color-alt: #ffd369;
+  --color-accent-hover: #b8181c;
+  --color-dark-hover: #372e5f;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 18px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #141024;
+}
+
+:root[data-theme='light'] {
+  --color-accent: #ff4d4d;
+  --color-accent-hover: #cc3a3a;
+
+  --color-dark: #f0f0f0;
+  --color-dark-hover: #c0c0c0;
+
+  --color-light: #141024;
+  --color-alt: #ffb347;
+}
+
+:root[data-theme='dark'] {
+  --color-accent: #d52027;
+  --color-dark: #141024;
+  --color-light: #fff;
+  --color-alt: #ffd369;
+  --color-accent-hover: #b8181c;
+  --color-dark-hover: #372e5f;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--color-accent); 
+  color: var(--color-dark); 
+}
+
+ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffd369;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+ul li a:hover::after,
+ul li a.active::after {
+  width: 100%;
+}
+
+.burger-btn span {
+  will-change: transform, opacity;
+  background-color: white;
+}
