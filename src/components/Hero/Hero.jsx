@@ -14,7 +14,7 @@ import '../../styles/animation.css';
 const socials = [
   { Icon: FaInstagram, url: 'https://instagram.com/denys.skachko' },
   { Icon: FaTelegramPlane, url: 'https://t.me/stormstyle' },
-  { Icon: FaGithub, url: 'https://github.com' },
+  { Icon: FaGithub, url: 'https://github.com/DenysSkachko' },
   { Icon: FaLinkedin, url: 'https://linkedin.com' },
   { Icon: SiGmail, url: 'mailto:denya.skachko@gmail.com' },
   { Icon: FaDiscord, url: 'https://discord.com' },
@@ -70,7 +70,7 @@ const Hero = () => {
         style={{ width: '300px', maxWidth: '80vw' }}
       >
         <img
-          src="/main-img.png"
+          src="./main-img.png"
           alt="Denys"
           className="w-full h-auto object-contain object-top scale-[1.55]"
           draggable={false}

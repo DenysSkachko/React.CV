@@ -17,6 +17,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 1024px)');
+
+    if (mediaQuery.matches) {
+      return;
+    }
+
     const aboutSection = document.querySelector('#about');
     const skillsSection = document.querySelector('#skills');
     const projectsSection = document.querySelector('#projects');
