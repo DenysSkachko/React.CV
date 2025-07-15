@@ -31,16 +31,18 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    gsap.fromTo(
-      '[data-header]',
-      { y: -150, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: 'expo.out',
-      }
-    );
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      gsap.fromTo(
+        '[data-header]',
+        { y: -150, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: 'expo.out',
+        }
+      );
+    }
   }, []);
 
   useEffect(() => {
@@ -77,33 +79,35 @@ const Header = () => {
     setActiveSection(href);
     setIsOpen(false);
 
-    setTimeout(() => {
-      ScrollTrigger.create({
-        trigger: '#about',
-        start: 'bottom bottom',
-        pin: true,
-        pinSpacing: false,
-        id: 'pin-about',
-      });
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      setTimeout(() => {
+        ScrollTrigger.create({
+          trigger: '#about',
+          start: 'bottom bottom',
+          pin: true,
+          pinSpacing: false,
+          id: 'pin-about',
+        });
 
-      ScrollTrigger.create({
-        trigger: '#skills',
-        start: 'top top',
-        pin: true,
-        pinSpacing: false,
-        id: 'pin-skills',
-      });
+        ScrollTrigger.create({
+          trigger: '#skills',
+          start: 'top top',
+          pin: true,
+          pinSpacing: false,
+          id: 'pin-skills',
+        });
 
-      ScrollTrigger.create({
-        trigger: '#projects',
-        start: 'top top',
-        pin: true,
-        pinSpacing: false,
-        id: 'pin-projects',
-      });
+        ScrollTrigger.create({
+          trigger: '#projects',
+          start: 'top top',
+          pin: true,
+          pinSpacing: false,
+          id: 'pin-projects',
+        });
 
-      ScrollTrigger.refresh();
-    }, 800);
+        ScrollTrigger.refresh();
+      }, 800);
+    }
   };
 
   return (

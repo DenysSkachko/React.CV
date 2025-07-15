@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 1024px)');
+    const mediaQuery = window.matchMedia('(max-width: 1023.98px)');
 
     if (mediaQuery.matches) {
       return;
