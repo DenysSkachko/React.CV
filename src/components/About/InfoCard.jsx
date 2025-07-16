@@ -102,9 +102,6 @@ const InfoCard = () => {
       );
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
   }, []);
 
   return (

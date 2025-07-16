@@ -39,9 +39,6 @@ const EducationCard = ({ title, index }) => {
       }
     );
 
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
   }, []);
 
   const toggleFlip = (e) => {

@@ -60,9 +60,7 @@ const Header = () => {
       });
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+  
   }, []);
 
   const jumpToSection = (href) => {

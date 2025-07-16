@@ -56,7 +56,7 @@ const Projects = () => {
 
       gsap.fromTo(
         el,
-        { scale: 1.2 },
+        { scale: 2 },
         {
           scale: 1,
           duration: 1,

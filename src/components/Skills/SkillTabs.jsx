@@ -283,9 +283,6 @@ const SkillTabs = React.forwardRef((props, ref) => {
       );
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
   }, [activeTab, currentSkill.length]);
 
   return (
@@ -364,7 +361,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -60, scale: 0.9 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="absolute top-0 left-0 w-full bg-[var(--color-light)] text-[var(--color-dark)] rounded-2xl shadow-2xl p-10 z-10"
+                className="absolute top-0 left-0 w-full h-auto bg-[var(--color-light)] text-[var(--color-dark)] rounded-2xl shadow-2xl p-10 z-10"
               >
                 <img
                   src={expandedSkill.logo}
