@@ -67,26 +67,27 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      <ThemeToggle />
-      <Header />
+      {/* <ThemeToggle /> */}
+      {/* <Header /> */}
       <main className="flex-1">
-        <Hero />
+        {/*  <Hero /> */}
 
         <div className="relative">
           <section id="about" className="slide-section ">
             <About />
-          </section>
-          <section id="skills" className="slide-section h-[100vh]">
+          </section>{/* 
+          <section id="skills" className="slide-section h-auto lg:h-[100vh]">
             <Skills />
-          </section>
+          </section> */}
+          {/* 
           <section id="projects" className="slide-section h-[100vh]">
             <Projects />
-          </section>
+          </section> */}
         </div>
         {/* <Reviews /> */}
       </main>
-
-      <Footer />
+      {/* 
+      <Footer /> */}
     </div>
   );
 }

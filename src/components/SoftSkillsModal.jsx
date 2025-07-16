@@ -22,7 +22,6 @@ const SoftSkillsModal = ({ isOpen, onClose, skills }) => {
 
   return ReactDOM.createPortal(
     <>
-
       <div
         onClick={onClose}
         className={`fixed inset-0 bg-[#141024cc] backdrop-blur-sm z-[999] transition-opacity duration-300 ${

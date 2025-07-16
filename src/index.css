@@ -38,6 +38,12 @@
   --color-dark-hover: #372e5f;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -47,11 +53,13 @@ body {
 
 html {
   scroll-behavior: smooth;
+
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: var(--color-accent); 
-  color: var(--color-dark); 
+  background: var(--color-accent);
+  color: var(--color-dark);
 }
 
 ul li a::after {

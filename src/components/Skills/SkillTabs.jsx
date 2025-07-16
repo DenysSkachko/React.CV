@@ -124,13 +124,12 @@ const SkillTabs = React.forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className="z-13 bg-[var(--color-dark)] text-[#141024] px-6 py-6 sm:px-12 lg:px-24 overflow-auto "
+      className="z-13 bg-[var(--color-dark)] text-[#141024] px-6 py-6 sm:px-12 lg:px-24 "
       aria-label="Projects Section"
     >
-      <div className="flex flex-col md:flex-row max-w-6xl mx-auto gap-8 h-full">
-    
+      <div className="flex flex-col lg:flex-row max-w-6xl mx-auto gap-8 h-full">
         <nav
-          className="flex md:flex-col justify-center md:justify-start gap-4 md:gap-8"
+          className="flex lg:flex-col justify-center lg:justify-start gap-4 md:gap-8"
           role="tablist"
           aria-orientation="vertical"
           style={{ minWidth: '140px' }}
@@ -163,7 +162,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
           <AnimatePresence mode="wait">
             {activeIndex === null ? (
               <motion.div
-                key={activeTab} 
+                key={activeTab}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
@@ -189,7 +188,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
               </motion.div>
             ) : (
               <motion.div
-                key="expanded" 
+                key="expanded"
                 initial={{ opacity: 0, y: 100, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -60, scale: 0.9 }}

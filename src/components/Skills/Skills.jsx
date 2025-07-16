@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Skills = () => {
   return (
     <div
-      className="h-[100vh] pt-20  z-12 bg-[var(--color-dark)] text-[#141024] shadow-2xl"
+      className="h-auto lg:h-[100vh] pt-20  z-12 bg-[var(--color-dark)] text-[#141024] shadow-2xl"
       aria-label="Skills Section"
       style={{ boxShadow: '0 0px 100px 1px rgba(0, 0, 0, 0.50)' }}
     >

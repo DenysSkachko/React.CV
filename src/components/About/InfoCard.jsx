@@ -109,7 +109,7 @@ const InfoCard = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1100px] mx-auto relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1100px] mx-auto relative ">
         {infoData.map(({ id, icon, label, value, flag }, i) => (
           <div
             key={id}
@@ -134,7 +134,9 @@ const InfoCard = () => {
                 </span>
               </div>
               <div className="flex items-center justify-between mt-3">
-                <p className="text-[var(--color-light)] text-xl font-bold">{value}</p>
+                <p className="text-[var(--color-light)] text-xl font-bold">
+                  {value}
+                </p>
                 {flag && (
                   <img
                     src={`https://flagcdn.com/w40/${flag}.png`}
