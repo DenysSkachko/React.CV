@@ -128,7 +128,9 @@ const InfoCard = () => {
           >
             <div className="p-6" data-inner>
               <div className="flex items-center gap-4">
-                <div className="p-2 bg-[#FFD369]/10 text-[var(--color-alt)] rounded-lg">{icon}</div>
+                <div className="p-2 bg-[#FFD369]/10 text-[var(--color-alt)] rounded-lg">
+                  {icon}
+                </div>
                 <span className="uppercase tracking-wider text-[var(--color-alt)] font-semibold text-xs sm:text-sm">
                   {label}
                 </span>

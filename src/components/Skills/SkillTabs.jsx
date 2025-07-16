@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { AnimatePresence, motion } from 'framer-motion';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const tabs = [
   { id: 'main', label: 'Main' },
@@ -242,13 +246,52 @@ const SkillTabs = React.forwardRef((props, ref) => {
   const [activeTab, setActiveTab] = useState('main');
   const [activeIndex, setActiveIndex] = useState(null);
   const currentSkill = skillsData[activeTab];
-  const expandedSkill =
-    activeIndex !== null ? currentSkill[activeIndex] : null;
+  const expandedSkill = activeIndex !== null ? currentSkill[activeIndex] : null;
+
+  const containerRef = useRef(null);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    cardRefs.current = cardRefs.current.slice(0, currentSkill.length);
+
+    cardRefs.current.forEach((card, i) => {
+      if (!card) return;
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 80,
+          rotateX: 45,
+          transformOrigin: 'center bottom',
+          perspective: 600,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 1.4,
+          ease: 'bounce.out',
+          delay: i * 0.12,
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            toggleActions: 'play reset play reset',
+            invalidateOnRefresh: true,
+            refreshPriority: 1,
+          },
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, [activeTab, currentSkill.length]);
 
   return (
     <section
       ref={ref}
-      className="z-13 bg-[var(--color-dark)] text-[#141024] px-6 py-6 sm:px-12 lg:px-12 "
+      className="z-13 bg-[var(--color-dark)] text-[#141024] px-6 py-6 sm:px-12 lg:px-12"
       aria-label="Projects Section"
     >
       <div className="flex flex-col lg:flex-row max-w-6xl mx-auto gap-8 h-full">
@@ -294,11 +337,15 @@ const SkillTabs = React.forwardRef((props, ref) => {
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
               >
                 {currentSkill.map(({ title, logo }, i) => (
-                  <motion.article
+                  <article
                     key={i}
+                    ref={(el) => (cardRefs.current[i] = el)}
                     onClick={() => setActiveIndex(i)}
-                    whileHover={{ scale: 1.05 }}
                     className="bg-[var(--color-light)] text-[var(--color-dark)] rounded-lg p-4 shadow-lg flex flex-col items-center cursor-pointer"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') setActiveIndex(i);
+                    }}
                   >
                     <img
                       src={logo}
@@ -307,7 +354,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
                       draggable={false}
                     />
                     <h3 className="text-2xl font-bold text-center">{title}</h3>
-                  </motion.article>
+                  </article>
                 ))}
               </motion.div>
             ) : (

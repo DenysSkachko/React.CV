@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import Modal from './Modal';
 
 const projects = [
   {
@@ -28,6 +29,8 @@ const projects = [
 const Projects = () => {
   const [current, setCurrent] = useState(0);
   const lenght = projects.length;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const nextProject = () => {
     setCurrent((prev) => (prev === lenght - 1 ? 0 : prev + 1));
@@ -37,13 +40,13 @@ const Projects = () => {
     setCurrent((prev) => (prev === 0 ? lenght - 1 : prev - 1));
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, []); */
 
   return (
     <div
@@ -64,7 +67,10 @@ const Projects = () => {
           className="bg-[var(--color-alt)] bg-cover bg-center absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-6 text-center"
         >
           <div className="absolute inset-0 bg-[var(--color-dark)]/70 z-0" />
-          <div className="relative z-10 p-20 bg-[var(--color-light)] rounded-2xl shadow-2xl">
+          <div
+            onClick={() => setIsModalOpen(true)}
+            className="relative z-10 p-20 mx-auto bg-[var(--color-light)] rounded-2xl shadow-2xl cursor-pointer"
+          >
             <h2 className="text-[var(--color-dark)] text-4xl md:text-6xl font-bold mb-6">
               {projects[current].title}
             </h2>
@@ -107,6 +113,19 @@ const Projects = () => {
           />
         ))}
       </div>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h3 className="text-2xl font-bold mb-4 text-[var(--color-light)]">
+          {projects[current].title}
+        </h3>
+        <p className="text-lg text-[var(--color-light)]">
+          {projects[current].description}
+        </p>
+        <img
+          src={projects[current].image}
+          alt={projects[current].title}
+          className="mt-6 rounded-lg"
+        />
+      </Modal>
     </div>
   );
 };
