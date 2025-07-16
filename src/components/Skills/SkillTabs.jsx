@@ -8,51 +8,106 @@ const tabs = [
   { id: 'other', label: 'Others' },
 ];
 
-const projectsData = {
+const skillsData = {
   main: [
     {
       title: 'HTML5',
-      desc: 'Standard language for building semantic, accessible, and structured content on the web.',
+      points: [
+        'HTML Document Structure',
+        'Semantic element',
+        'Accessibility',
+        'SEO-friendly markup',
+      ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
     },
     {
       title: 'CSS3',
-      desc: 'Used for styling web content with layout, colors, animations, and responsive design.',
+      desc: 'I almost never use native CSS in practice, as I took Tailwind CSS as a basis for my projects, but I have quite good knowledge of CSS',
+      points: [
+        'Flexbox layout',
+        'Grid layout',
+        'CSS Variables (Custom Properties)',
+        'Media Queries',
+        'Keyframe animations',
+      ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
     },
     {
       title: 'JavaScript',
-      desc: 'Dynamic scripting language essential for interactive frontend and full-stack applications.',
+      desc: 'I study JavaScript every day to this day, including new libraries',
+      points: [
+        'DOM manipulation and events',
+        'ES6+ features',
+        'Closures, scopes, and prototypes understanding',
+        'Error handling with try/catch',
+        'Event delegation and bubbling concepts',
+      ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
     },
     {
       title: 'React',
-      desc: 'Component-based library for building fast and scalable user interfaces.',
+      desc: 'In particular, this resume site is built on React.',
+      points: [
+        'Components and props',
+        'State and hooks',
+        'JSX syntax and conditional rendering',
+        'Component lifecycle and effects',
+      ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
     },
     {
       title: 'Tailwind CSS',
-      desc: 'Utility-first CSS framework for building modern, responsive designs faster.',
+      desc: 'Tailwind is my love, I did all my recent projects on Tailwind, I see it as the main tool for working with CSS',
+      points: [
+        'Utility-first classes for rapid UI building',
+        'Responsive design with breakpoint prefixes',
+        'Using variants like hover:, focus:, dark:',
+        'Customization via Tailwind config file',
+      ],
       logo: 'https://www.svgrepo.com/show/374118/tailwind.svg',
     },
     {
       title: 'TypeScript',
-      desc: 'Superset of JavaScript that adds strong typing and modern tooling features.',
+      desc: 'In the process of learning',
+      points: [
+        'Static typing and interfaces',
+        'Generics for reusable components',
+        'Using tsconfig.json for project config',
+        'Type guards and narrowing',
+      ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     },
     {
       title: 'SASS',
-      desc: 'CSS preprocessor with variables, nesting, mixins and better style organization.',
+      desc: 'Made a project on SCSS (FutureTech), positive emotions remained. Using mixins, functions with the structure of components is very convenient to use',
+      points: [
+        'Variables and nesting for cleaner CSS',
+        'Mixins and functions to reuse code',
+        'Partials and imports for modular stylesheets',
+        'Integration with build tools like Vite',
+      ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
     },
     {
       title: 'PHP',
-      desc: 'Server-side scripting language often used for dynamic content and web applications.',
+      desc: 'Used PHP to create themes, plugins and gutenberg blocks for WordPress. There are several pet projects where PHP is the main language.',
+      points: [
+        'Server-side scripting basics',
+        'Sessions and cookies for user data persistence',
+        'Writing reusable functions and classes',
+        'WordPress theme/plugin development basics',
+      ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
     },
     {
       title: 'WordPress',
-      desc: 'Popular CMS built on PHP, used to build everything from blogs to e-commerce.',
+      desc: 'I have done a lot of work with WordPress, I also took a paid course on WordPress/PHP, where I made themes with minimal use of the admin panel, I used ACF and ACF Pro',
+      points: [
+        'Installing and configuring WordPress CMS',
+        'Creating and customizing themes with PHP, HTML, CSS',
+        'Working with plugins and hooks (actions/filters)',
+        'Using Advanced Custom Fields (ACF) for custom data',
+      ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg',
     },
   ],
@@ -61,21 +116,47 @@ const projectsData = {
       title: 'Git',
       desc: 'Version control system for tracking changes and collaborating in codebases.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+      points: [
+        'git init / clone / commit / push / pull / fetch',
+        'Branching and merging (`git branch`, `git merge`)',
+        'Staging and reverting changes (`git add`, `git reset`)',
+        'Conflict resolution and rebasing',
+        'Working with remote repositories (origin, upstream)',
+      ],
     },
     {
       title: 'GitHub',
-      desc: 'CI/CD automation for building, testing, and deploying projects.',
+      desc: 'This page - working by GitHub',
       logo: 'https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/github/github-original.svg',
+      points: [
+        'Working with GitHub repositories (clone, fork, pull request)',
+        'GitHub Pages deployment',
+        'GitHub Actions (basic workflow setup)',
+        'Managing issues, branches, and releases',
+      ],
     },
     {
       title: 'NPM',
-      desc: 'Node package manager used to install and manage frontend & backend libraries.',
+      desc: 'Used in all my projects.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg',
+      points: [
+        '`npm init`, `npm install`, `npm uninstall`',
+        'package.json structure & dependency management',
+        'Using scripts (`npm run <script>`)',
+        'Global vs local packages',
+      ],
     },
     {
       title: 'Vite',
-      desc: 'Fast frontend build tool optimized for modern JavaScript frameworks.',
+      desc: 'Used in all my projects.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg',
+      points: [
+        'Zero-config setup for React/Vue',
+        'Fast HMR (Hot Module Replacement)',
+        '`vite.config.js` customization',
+        'Aliasing and env variables',
+        'Production builds and optimization',
+      ],
     },
   ],
   config: [
@@ -83,33 +164,76 @@ const projectsData = {
       title: 'Prettier',
       desc: 'Code formatter that enforces consistent style across your codebase.',
       logo: 'https://unpkg.com/simple-icons@v11/icons/prettier.svg',
+      points: [
+        'Automatic code formatting on save',
+        'Configuration via `.prettierrc`',
+        'Integrating with ESLint',
+        'Prettier + VSCode plugin setup',
+        'Ignoring files with `.prettierignore`',
+      ],
     },
     {
       title: 'ESLint',
       desc: 'Linter tool for identifying and fixing problems in JavaScript/TypeScript code.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg',
+      points: [
+        'Linting JS/TS for code quality and errors',
+        'Rules configuration via `.eslintrc`',
+        'ESLint plugins and extensions',
+        'Autofix with `eslint --fix`',
+        'Integration with Prettier',
+      ],
     },
     {
       title: 'VS Code',
-      desc: 'Code editor with extensions and tooling for web, cloud, and full-stack development.',
+      desc: 'VS Code my favorite IDE.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
+      points: [
+        'Extensions: Prettier, ESLint, Tailwind IntelliSense',
+        'Keyboard shortcuts and workspace setup',
+        'Working with Git/GitHub from VSCode',
+        'Live Server & debugging tools',
+        'Emmet abbreviations and multi-cursor editing',
+      ],
     },
   ],
+
   other: [
     {
       title: 'Photoshop',
-      desc: 'Powerful image editor used for UI design, graphics, and asset preparation.',
+      desc: 'I have been working with Photoshop for over 10 years.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
+      points: [
+        'UI mockup design and layout',
+        'Layer management & smart objects',
+        'Exporting assets for web (PNG, SVG)',
+        'Working with typography & guides',
+        'Basic photo editing and retouching',
+      ],
     },
     {
       title: 'ACF',
       desc: 'Advanced Custom Fields plugin for WordPress to build custom field groups and enhance content management.',
       logo: 'https://cdn.brandfetch.io/idyxGctRjG/w/256/h/256/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1751030685548',
+      points: [
+        'Creating custom field groups for posts/pages',
+        'Flexible content & repeaters',
+        'Using `get_field()` and `the_field()` in templates',
+        'Conditional logic and UI customization',
+        'Connecting ACF with custom post types (CPT)',
+      ],
     },
     {
       title: 'GSAP',
-      desc: 'Advanced Custom Fields plugin for WordPress to build custom field groups and enhance content management.',
+      desc: 'This project using this library, 85% animation by GSAP',
       logo: 'https://cdn.worldvectorlogo.com/logos/gsap-greensock.svg',
+      points: [
+        'Basic tweens and timelines (`gsap.to`, `.from`, `.timeline`)',
+        'ScrollTrigger: animations on scroll',
+        'Stagger, delay, and easing',
+        'Combining GSAP with React (useEffect, refs)',
+        'Animating SVGs and DOM elements',
+      ],
     },
   ],
 };
@@ -117,9 +241,9 @@ const projectsData = {
 const SkillTabs = React.forwardRef((props, ref) => {
   const [activeTab, setActiveTab] = useState('main');
   const [activeIndex, setActiveIndex] = useState(null);
-  const currentProjects = projectsData[activeTab];
-  const expandedProject =
-    activeIndex !== null ? currentProjects[activeIndex] : null;
+  const currentSkill = skillsData[activeTab];
+  const expandedSkill =
+    activeIndex !== null ? currentSkill[activeIndex] : null;
 
   return (
     <section
@@ -169,7 +293,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
               >
-                {currentProjects.map(({ title, logo }, i) => (
+                {currentSkill.map(({ title, logo }, i) => (
                   <motion.article
                     key={i}
                     onClick={() => setActiveIndex(i)}
@@ -196,16 +320,25 @@ const SkillTabs = React.forwardRef((props, ref) => {
                 className="absolute top-0 left-0 w-full bg-[var(--color-light)] text-[var(--color-dark)] rounded-2xl shadow-2xl p-10 z-10"
               >
                 <img
-                  src={expandedProject.logo}
-                  alt={expandedProject.title}
+                  src={expandedSkill.logo}
+                  alt={expandedSkill.title}
                   className="w-16 h-16 mb-6 rounded-[10px]"
                 />
-                <h3 className="text-3xl font-bold mb-4">
-                  {expandedProject.title}
+                <h3 className="text-3xl font-bold mb-6">
+                  {expandedSkill.title}
                 </h3>
-                <p className="text-base leading-relaxed max-w-2xl">
-                  {expandedProject.desc}
+                <p className="text-base leading-relaxed max-w-2xl mb-4">
+                  {expandedSkill.desc}
                 </p>
+
+                {expandedSkill.points &&
+                  Array.isArray(expandedSkill.points) && (
+                    <ul className="list-disc list-inside space-y-2">
+                      {expandedSkill.points.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 <button
                   onClick={() => setActiveIndex(null)}
                   className="absolute top-4 right-4 bg-[var(--color-dark)] text-[var(--color-light)] px-4 py-2 rounded-md text-sm hover:bg-[#333] transition"

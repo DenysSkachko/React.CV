@@ -46,7 +46,10 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-[var(--color-dark)] shadow-xl">
+    <div
+      className="relative w-screen h-screen overflow-hidden bg-[var(--color-dark)] shadow-xl"
+      style={{ boxShadow: '0 0px 100px 1px rgba(0, 0, 0, 0.50)' }}
+    >
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -60,12 +63,12 @@ const Projects = () => {
           }}
           className="bg-[var(--color-alt)] bg-cover bg-center absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-6 text-center"
         >
-          <div className="absolute inset-0 bg-[var(--color-dark)]/50 z-0" />
-          <div className="relative z-10 p-4">
-            <h2 className="text-[var(--color-light)] text-4xl md:text-6xl font-bold mb-6">
+          <div className="absolute inset-0 bg-[var(--color-dark)]/70 z-0" />
+          <div className="relative z-10 p-20 bg-[var(--color-light)] rounded-2xl shadow-2xl">
+            <h2 className="text-[var(--color-dark)] text-4xl md:text-6xl font-bold mb-6">
               {projects[current].title}
             </h2>
-            <p className="text-[var(--color-light)] text-xl max-w-2xl">
+            <p className="text-[var(--color-dark)] text-xl max-w-2xl">
               {projects[current].description}
             </p>
           </div>
