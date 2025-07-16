@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Modal from './Modal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,14 +17,13 @@ const projects = [
   {
     title: 'FutureTech multi-page',
     description:
-      'HTML/CSS layout, JavaScript interaction, Axios, WordPress, Php',
+      'HTML/CSS layout, JavaScript interaction, WordPress, Php, Sass, JavaScript, GSAP',
     image: './project2.png',
     color: '#FFD369',
   },
   {
     title: 'Bento Proxima Web',
-    description:
-      'HTML/CSS layout, JavaScript interaction, Axios, WordPress, Php',
+    description: 'HTML, Tailwind CSS, React, FramerMotion, Vite, JavaScript',
     image: './project3.png',
     color: '#FFD369',
   },
@@ -32,94 +31,146 @@ const projects = [
 
 const Projects = () => {
   const [current, setCurrent] = useState(0);
-  const lenght = projects.length;
+  const length = projects.length;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isZoomed, setIsZoomed] = useState(false);
 
-  const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
+  const slideRefs = useRef([]);
+  const titleRefs = useRef([]);
+  const descRefs = useRef([]);
 
   const nextProject = () => {
-    setCurrent((prev) => (prev === lenght - 1 ? 0 : prev + 1));
+    setCurrent((prev) => (prev === length - 1 ? 0 : prev + 1));
   };
 
   const prevProject = () => {
-    setCurrent((prev) => (prev === 0 ? lenght - 1 : prev - 1));
+    setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1));
   };
 
-  const [titleEl, setTitleEl] = useState(null);
-  const [subtitleEl, setSubtitleEl] = useState(null);
-
   useEffect(() => {
-    if (!titleEl || !subtitleEl) return;
+    if (!slideRefs.current.length) return;
 
-    gsap.killTweensOf([titleEl, subtitleEl]);
+    slideRefs.current.forEach((el, index) => {
+      if (!el) return;
 
-    gsap.fromTo(
-      titleEl,
-      { opacity: 0, y: 250 },
-      { opacity: 1, y: 0, duration: 1 }
-    );
-    gsap.fromTo(
-      subtitleEl,
-      { opacity: 0, y: 230 },
-      { opacity: 1, y: 0, duration: 1 },
-      '-=0.5'
-    );
-  }, [titleEl, subtitleEl]);
+      if (el._gsapScrollTrigger) return;
 
-  /* useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-    }, 5000);
+      gsap.fromTo(
+        el,
+        { scale: 1.2 },
+        {
+          scale: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: true,
+            id: `slide-${index}`,
+          },
+        }
+      );
+    });
+    titleRefs.current.forEach((el, index) => {
+      if (!el) return;
 
-    return () => clearInterval(interval);
-  }, []); */
+      if (el._gsapScrollTrigger) return;
+
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 90%',
+            end: 'bottom 20%',
+            scrub: true,
+            id: `title-${index}`,
+          },
+        }
+      );
+    });
+
+    descRefs.current.forEach((el, index) => {
+      if (!el) return;
+
+      if (el._gsapScrollTrigger) return;
+
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 90%',
+            end: 'bottom 20%',
+            scrub: true,
+            id: `desc-${index}`,
+          },
+        }
+      );
+    });
+  }, []);
 
   return (
-    <div
-      className="relative w-screen h-screen overflow-hidden bg-[var(--color-dark)] shadow-xl"
-      style={{ boxShadow: '0 0px 100px 1px rgba(0, 0, 0, 0.50)' }}
-    >
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current}
-          initial={{ x: 300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -300, opacity: 0 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
+    <div className="relative w-screen h-screen overflow-hidden bg-[var(--color-dark)]">
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          ref={(el) => (slideRefs.current[index] = el)}
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out flex flex-col items-center justify-center text-center px-6 ${
+            current === index
+              ? 'opacity-100 z-10'
+              : 'opacity-0 z-0 pointer-events-none'
+          }`}
           style={{
-            backgroundImage: `url(${projects[current].image})`,
-            color: projects[current].color,
+            backgroundImage: `url(${project.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
-          className="bg-[var(--color-alt)] bg-cover bg-center absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-6 text-center"
         >
-          <div className="absolute inset-0 bg-[var(--color-dark)]/70 z-0" />
+          <div className="absolute inset-0 bg-[var(--color-dark)]/80" />
           <div
             onClick={() => setIsModalOpen(true)}
-            className="relative z-10 p-8 xl:p-14 mx-auto bg-[var(--color-light)] rounded-2xl shadow-2xl cursor-pointer"
+            className="relative z-10 p-8 xl:p-14 bg-[var(--color-light)] rounded-2xl shadow-2xl"
           >
             <h2
-              ref={(el) => {
-                titleRef.current = el;
-                setTitleEl(el);
-              }}
+              ref={(el) => (titleRefs.current[index] = el)}
               className="text-[var(--color-dark)] text-4xl md:text-6xl font-bold mb-6"
             >
-              {projects[current].title}
+              {project.title}
             </h2>
             <p
-              ref={(el) => {
-                subtitleRef.current = el;
-                setSubtitleEl(el);
-              }}
+              ref={(el) => (descRefs.current[index] = el)}
               className="text-[var(--color-dark)] text-xl max-w-2xl"
             >
-              {projects[current].description}
+              {project.description}
             </p>
           </div>
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      ))}
+
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+        {projects.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrent(index)}
+            className={`w-3 h-3 rounded-full border transition-all duration-300 ${
+              current === index
+                ? 'bg-[var(--color-accent)] border-[var(--color-accent)] scale-125'
+                : 'bg-transparent border-white hover:scale-110'
+            }`}
+          />
+        ))}
+      </div>
 
       <div
         onClick={prevProject}
@@ -139,20 +190,6 @@ const Projects = () => {
         </span>
       </div>
 
-      <div className="z-20 absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3">
-        {projects.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full border transition-all duration-300 ${
-              current === index
-                ? 'bg-[var(--color-accent)] border-[var(--color-accent)] scale-125'
-                : 'bg-transparent border-white hover:scale-110'
-            }
-          `}
-          />
-        ))}
-      </div>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <h3 className="text-2xl font-bold mb-4 text-[var(--color-light)]">
           {projects[current].title}

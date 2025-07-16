@@ -40,7 +40,7 @@ function App() {
     if (skillsSection) {
       ScrollTrigger.create({
         trigger: skillsSection,
-        start: 'top top',
+        start: 'bottom bottom',
         pin: true,
         pinSpacing: false,
         id: 'pin-skills',
@@ -67,8 +67,8 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative ">
-      <ThemeToggle /> 
-      <Header /> 
+      <ThemeToggle />
+      <Header />
       <main className="flex-1">
         <Hero />
 
@@ -86,8 +86,8 @@ function App() {
         </div>
         {/* <Reviews /> */}
       </main>
-      
-      <Footer /> 
+
+      <Footer />
     </div>
   );
 }
