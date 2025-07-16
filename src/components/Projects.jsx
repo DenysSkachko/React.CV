@@ -1,6 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Modal from './Modal';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -32,6 +36,9 @@ const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
 
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+
   const nextProject = () => {
     setCurrent((prev) => (prev === lenght - 1 ? 0 : prev + 1));
   };
@@ -39,6 +46,27 @@ const Projects = () => {
   const prevProject = () => {
     setCurrent((prev) => (prev === 0 ? lenght - 1 : prev - 1));
   };
+
+  const [titleEl, setTitleEl] = useState(null);
+  const [subtitleEl, setSubtitleEl] = useState(null);
+
+  useEffect(() => {
+    if (!titleEl || !subtitleEl) return;
+
+    gsap.killTweensOf([titleEl, subtitleEl]);
+
+    gsap.fromTo(
+      titleEl,
+      { opacity: 0, y: 250 },
+      { opacity: 1, y: 0, duration: 1 }
+    );
+    gsap.fromTo(
+      subtitleEl,
+      { opacity: 0, y: 230 },
+      { opacity: 1, y: 0, duration: 1 },
+      '-=0.5'
+    );
+  }, [titleEl, subtitleEl]);
 
   /* useEffect(() => {
     const interval = setInterval(() => {
@@ -69,12 +97,24 @@ const Projects = () => {
           <div className="absolute inset-0 bg-[var(--color-dark)]/70 z-0" />
           <div
             onClick={() => setIsModalOpen(true)}
-            className="relative z-10 p-20 mx-auto bg-[var(--color-light)] rounded-2xl shadow-2xl cursor-pointer"
+            className="relative z-10 p-8 xl:p-14 mx-auto bg-[var(--color-light)] rounded-2xl shadow-2xl cursor-pointer"
           >
-            <h2 className="text-[var(--color-dark)] text-4xl md:text-6xl font-bold mb-6">
+            <h2
+              ref={(el) => {
+                titleRef.current = el;
+                setTitleEl(el);
+              }}
+              className="text-[var(--color-dark)] text-4xl md:text-6xl font-bold mb-6"
+            >
               {projects[current].title}
             </h2>
-            <p className="text-[var(--color-dark)] text-xl max-w-2xl">
+            <p
+              ref={(el) => {
+                subtitleRef.current = el;
+                setSubtitleEl(el);
+              }}
+              className="text-[var(--color-dark)] text-xl max-w-2xl"
+            >
               {projects[current].description}
             </p>
           </div>
