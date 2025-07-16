@@ -11,40 +11,40 @@ const infoData = [
     id: 'location',
     label: 'Location',
     value: 'Kharkiv, Ukraine',
-    icon: <MapPin className="w-6 h-6 text-[#FFD369]" />,
+    icon: <MapPin className="w-6 h-6" />,
     flag: 'ua',
   },
   {
     id: 'age',
     label: 'Age',
     value: '25 Years',
-    icon: <Cake className="w-6 h-6 text-[#FFD369]" />,
+    icon: <Cake className="w-6 h-6" />,
   },
   {
     id: 'birthdate',
     label: 'Birthdate',
     value: '25.10.1999',
-    icon: <CalendarDays className="w-6 h-6 text-[#FFD369]" />,
+    icon: <CalendarDays className="w-6 h-6" />,
   },
   {
     id: 'english',
     label: 'English',
     value: 'B2 Level',
-    icon: <Languages className="w-6 h-6 text-[#FFD369]" />,
+    icon: <Languages className="w-6 h-6" />,
     flag: 'gb',
   },
   {
     id: 'ukrainian',
     label: 'Ukrainian',
     value: 'Native',
-    icon: <Languages className="w-6 h-6 text-[#FFD369]" />,
+    icon: <Languages className="w-6 h-6" />,
     flag: 'ua',
   },
   {
     id: 'softskills',
     label: 'Soft Skills',
     value: 'Click to explore',
-    icon: <Sparkles className="w-6 h-6 text-[#FFD369]" />,
+    icon: <Sparkles className="w-6 h-6" />,
     isInteractive: true,
     skills: [
       {
@@ -128,8 +128,8 @@ const InfoCard = () => {
           >
             <div className="p-6" data-inner>
               <div className="flex items-center gap-4">
-                <div className="p-2 bg-[#FFD369]/10 rounded-lg">{icon}</div>
-                <span className="uppercase tracking-wider text-[#FFD369] font-semibold text-xs sm:text-sm">
+                <div className="p-2 bg-[#FFD369]/10 text-[var(--color-alt)] rounded-lg">{icon}</div>
+                <span className="uppercase tracking-wider text-[var(--color-alt)] font-semibold text-xs sm:text-sm">
                   {label}
                 </span>
               </div>

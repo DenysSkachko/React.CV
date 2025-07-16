@@ -124,12 +124,12 @@ const SkillTabs = React.forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className="z-13 bg-[var(--color-dark)] text-[#141024] px-6 py-6 sm:px-12 lg:px-24 "
+      className="z-13 bg-[var(--color-dark)] text-[#141024] px-6 py-6 sm:px-12 lg:px-12 "
       aria-label="Projects Section"
     >
       <div className="flex flex-col lg:flex-row max-w-6xl mx-auto gap-8 h-full">
         <nav
-          className="flex lg:flex-col justify-center lg:justify-start gap-4 md:gap-8"
+          className="flex flex-col sm:flex-row lg:flex-col justify-center lg:justify-start gap-4 md:gap-8"
           role="tablist"
           aria-orientation="vertical"
           style={{ minWidth: '140px' }}
@@ -193,7 +193,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -60, scale: 0.9 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="absolute top-0 left-0 w-full bg-white text-[#141024] rounded-2xl shadow-2xl p-10 z-10"
+                className="absolute top-0 left-0 w-full bg-[var(--color-light)] text-[var(--color-dark)] rounded-2xl shadow-2xl p-10 z-10"
               >
                 <img
                   src={expandedProject.logo}
@@ -208,7 +208,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
                 </p>
                 <button
                   onClick={() => setActiveIndex(null)}
-                  className="absolute top-4 right-4 bg-[#141024] text-white px-4 py-2 rounded-md text-sm hover:bg-[#333] transition"
+                  className="absolute top-4 right-4 bg-[var(--color-dark)] text-[var(--color-light)] px-4 py-2 rounded-md text-sm hover:bg-[#333] transition"
                 >
                   Close
                 </button>

@@ -45,7 +45,7 @@ const AnimatedHeadline = ({ text, className = '' }) => {
   return (
     <h2
       ref={headlineRef}
-      className={`text-[3rem] sm:text-[5rem] font-extrabold text-white tracking-tight uppercase leading-tight text-center cursor-default select-none ${className}`}
+      className={`text-[3rem] sm:text-[5rem] font-extrabold tracking-tight uppercase leading-tight text-center cursor-default select-none ${className}`}
     />
   );
 };

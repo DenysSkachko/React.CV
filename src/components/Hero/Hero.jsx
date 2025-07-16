@@ -55,10 +55,7 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="z-11 relative bg-[url('/back.png')] bg-cover bg-center min-h-screen px-6 flex flex-col items-center justify-center overflow-hidden bg-[var(--color-dark)] text-[var(--color-light)] select-none"
-      style={{
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.50)',
-      }}
+      className="z-11 relative bg-[url('/back.png')] bg-cover bg-center min-h-screen px-6 flex flex-col items-center justify-center overflow-hidden bg-[var(--color-dark)] text-[var(--color-light)] select-none shadow-xl"
     >
       <div className="absolute w-[900px] h-[700px] top-[-200px] right-[-200px] z-0 blur-[160px] rounded-full mix-blend-lighten bg-[var(--color-accent)]/25" />
 
@@ -109,7 +106,7 @@ const Hero = () => {
 
         <div
           ref={socialsRef}
-          className="flex gap-6 mt-4"
+          className="flex flex-wrap max-w-[200px] justify-center sm:max-w-full gap-6 mt-4"
           aria-label="Social media links"
         >
           {socials.map(({ Icon, url }, i) => (

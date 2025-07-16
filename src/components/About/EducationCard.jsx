@@ -87,7 +87,7 @@ const EducationCard = ({ title, index }) => {
           className="flip-back absolute w-full h-full backface-hidden rounded-3xl p-6 text-[var(--color-light)] flex flex-col justify-center bg-[var(--color-dark)]"
           style={{ transform: 'rotateY(180deg)' }}
         >
-          <h4 className="font-extrabold text-xl mb-3">
+          <h4 className="font-extrabold sm:text-xl mb-3">
             SIMON KUZNETS KHARKIV NATIONAL UNIVERSITY OF ECONOMICS
           </h4>
           <p className="mb-1 text-sm">

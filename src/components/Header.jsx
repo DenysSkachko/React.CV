@@ -19,7 +19,7 @@ const Burger = ({ isOpen, toggle }) => (
   <button
     aria-label="Toggle Menu"
     onClick={toggle}
-    className="md:hidden text-white z-[1001] text-3xl"
+    className="md:hidden text-[var(--color-light)] z-[1001] text-3xl"
   >
     {isOpen ? <HiX /> : <HiMenu />}
   </button>
@@ -113,7 +113,7 @@ const Header = () => {
   return (
     <header
       data-header
-      className="fixed top-0 left-0 w-full bg-[#141024] z-[1000] text-white shadow-xl"
+      className="fixed top-0 left-0 w-full bg-[var(--color-dark)] z-[1000] text-[var(--color-light)] shadow-xl"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Burger isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
@@ -121,7 +121,7 @@ const Header = () => {
         <nav
           ref={navRef}
           className={clsx(
-            'fixed top-0 left-0 w-full h-screen bg-[#141024] flex flex-col items-center justify-center gap-10 text-2xl font-semibold transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] md:flex md:flex-row md:h-auto md:py-0 md:px-0 md:bg-transparent md:text-xl md:gap-10 md:static md:translate-x-0 z-[1000]',
+            'fixed top-0 left-0 w-full h-screen bg-[var(--color-dark)]  flex flex-col items-center justify-center gap-10 text-2xl font-semibold transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] md:flex md:flex-row md:h-auto md:py-0 md:px-0 md:bg-transparent md:text-xl md:gap-10 md:static md:translate-x-0 z-[1000]',
             {
               'translate-x-0': isOpen,
               'translate-x-full md:translate-x-0': !isOpen,
@@ -139,9 +139,9 @@ const Header = () => {
               className={clsx(
                 'relative group px-2 py-1 transition-transform duration-300 uppercase',
                 {
-                  'text-white scale-110 pointer-events-none':
+                  'text-[var(--color-light)] scale-110 pointer-events-none':
                     activeSection === href,
-                  'hover:text-[#FFD369] hover:scale-110':
+                  'hover:text-[var(--color-alt)] hover:scale-110':
                     activeSection !== href,
                 }
               )}
@@ -149,7 +149,7 @@ const Header = () => {
               <span className="inline-block">{label}</span>
               <span
                 className={clsx(
-                  'absolute bottom-0 left-0 w-0 h-0.5 bg-[#FFD369] transition-all duration-300 group-hover:w-full',
+                  'absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-alt)] transition-all duration-300 group-hover:w-full',
                   activeSection === href &&
                     'w-full h-[3px] bg-[var(--color-accent)]'
                 )}

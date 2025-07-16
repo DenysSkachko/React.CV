@@ -40,13 +40,13 @@ const Projects = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-    }, 5000); 
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-[var(--color-dark)]">
+    <div className="relative w-screen h-screen overflow-hidden bg-[var(--color-dark)] shadow-xl">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -60,9 +60,9 @@ const Projects = () => {
           }}
           className="bg-[var(--color-alt)] bg-cover bg-center absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-6 text-center"
         >
-          <div className="absolute inset-0 bg-black/50 z-0" />
-          <div className="relative z-10">
-            <h2 className="text-[var(--color-light)] text-6xl font-bold mb-6">
+          <div className="absolute inset-0 bg-[var(--color-dark)]/50 z-0" />
+          <div className="relative z-10 p-4">
+            <h2 className="text-[var(--color-light)] text-4xl md:text-6xl font-bold mb-6">
               {projects[current].title}
             </h2>
             <p className="text-[var(--color-light)] text-xl max-w-2xl">
@@ -76,7 +76,7 @@ const Projects = () => {
         onClick={prevProject}
         className="absolute top-0 left-0 h-full w-1/5 z-10 group cursor-pointer flex items-center justify-start pl-4 hover:bg-white/10 transition-all duration-300"
       >
-        <span className="text-black text-4xl group-hover:-translate-x-2 transition-transform duration-300">
+        <span className="text-[var(--color-light)] text-4xl group-hover:-translate-x-2 transition-transform duration-300">
           ‹
         </span>
       </div>
@@ -85,7 +85,7 @@ const Projects = () => {
         onClick={nextProject}
         className="absolute top-0 right-0 h-full w-1/5 z-10 group cursor-pointer flex items-center justify-end pr-4 hover:bg-white/10 transition-all duration-300"
       >
-        <span className="text-black text-4xl group-hover:translate-x-2 transition-transform duration-300">
+        <span className="text-[var(--color-light)] text-4xl group-hover:translate-x-2 transition-transform duration-300">
           ›
         </span>
       </div>
