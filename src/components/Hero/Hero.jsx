@@ -66,14 +66,14 @@ const Hero = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            Привет
+            Denys 
           </span>
           <span className="text-[var(--color-accent)] hover:scale-[1.1] hover:-rotate-[1deg] transition-transform duration-300">
-            Пэт
+            Skachko
           </span>
           <span className="relative group">
             <span className="z-10 relative group-hover:text-[var(--color-dark)] transition-all duration-300">
-              / full-stack
+              / front-end
             </span>
             <span className="absolute inset-0 rounded bg-[var(--color-accent)] opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-300 -z-10" />
           </span>
