@@ -1,4 +1,4 @@
-// src/animations/AnimatedHero.js
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 export const animateHeroSection = (
   heroRef,
   titleRef,
-  subtitleRef,
   socialsRef
 ) => {
   if (!heroRef.current) return;
@@ -32,15 +31,7 @@ export const animateHeroSection = (
       0.1
     );
 
-    timeline.to(
-      subtitleRef.current,
-      {
-        y: -100,
-        opacity: 0,
-        ease: 'sine.out',
-      },
-      0
-    );
+  
 
     timeline.to(
       socialsRef.current,
@@ -61,16 +52,6 @@ export const animateHeroSection = (
         duration: 1.1,
         ease: 'power3.out',
       })
-      .from(
-        subtitleRef.current,
-        {
-          y: 60,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-        },
-        '-=0.6'
-      )
       .from(
         socialsRef.current,
         {

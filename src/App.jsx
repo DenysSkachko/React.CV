@@ -47,7 +47,7 @@ function App() {
       });
     }
 
-    if (projectsSection) {
+   /*  if (projectsSection) {
       ScrollTrigger.create({
         trigger: projectsSection,
         start: 'top top',
@@ -56,7 +56,7 @@ function App() {
         pinSpacing: false,
         id: 'pin-projects',
       });
-    }
+    } */
 
     ScrollTrigger.refresh();
 
@@ -76,11 +76,11 @@ function App() {
           <section id="about" className="slide-section ">
             <About />
           </section>
-          <section id="skills" className="slide-section h-auto lg:h-[100vh]">
+          <section id="skills" className="slide-section h-auto ">
             <Skills />
           </section>
 
-          <section id="projects" className="slide-section h-auto lg:h-[100vh]">
+          <section id="projects" className="slide-section h-auto">
             <Projects />
           </section>
         </div>

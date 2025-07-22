@@ -74,7 +74,7 @@ const EducationCard = ({ title, index }) => {
         }}
       >
         <div className="hover:bg-[#372e5f] flip-front absolute w-full h-full backface-hidden rounded-3xl flex flex-col justify-center items-center p-6 text-center bg-[var(--color-dark)]">
-          <BookOpen className="text-[#FFD369] w-10 h-10 mb-3" />
+          <BookOpen className="text-[var(--color-alt)] w-10 h-10 mb-3" />
           <h4 className="text-[var(--color-light)] font-extrabold text-2xl mb-2">
             {title}
           </h4>

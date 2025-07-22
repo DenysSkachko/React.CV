@@ -30,14 +30,14 @@
 }
 
 :root[data-theme='dark'] {
-  --color-accent: #d52027;
+  --color-accent: #ee262c;
   --color-dark: #141024;
   --color-light: #fff;
   --color-alt: #ffd369;
   --color-accent-hover: #b8181c;
   --color-dark-hover: #372e5f;
 }
-
+/* d52027 */
 *,
 *::before,
 *::after {
@@ -87,4 +87,23 @@ ul li a.active::after {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-light);
+  border-radius: 4px;
+  border: 2px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
 }

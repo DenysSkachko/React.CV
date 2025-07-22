@@ -52,14 +52,15 @@ const Modal = ({ isOpen, onClose, children }) => {
             exit="hidden"
             transition={{ duration: 0.3, ease: 'easeOut' }}
           >
+            
+            {children}
             <button
               aria-label="Close modal"
               onClick={onClose}
-              className="absolute top-4 right-4 text-[var(--color-alt)] hover:text-[var(--color-light)] text-3xl leading-none select-none"
+              className="absolute -top-2 md:-top-3 right-4 md:right-2 text-[var(--color-alt)] hover:text-[var(--color-light)] text-6xl leading-none select-none cursor-pointer"
             >
               ×
             </button>
-            {children}
           </motion.div>
         </>
       )}

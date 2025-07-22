@@ -4,12 +4,12 @@ const SoftSkillsModal = ({ isOpen, onClose, skills }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <header className="mb-6">
-        <h3 className="text-4xl ml-3 font-extrabold text-[var(--color-alt)] tracking-wide">
+        <h3 className="text-4xl ml-3 font-extrabold text-[var(--color-light)] tracking-wide">
           Soft Skills
         </h3>
       </header>
       <div
-        className="flex-1 overflow-y-auto py-8 px-3
+        className="flex-1 overflow-y-auto py-2 px-3
         grid grid-cols-1 sm:grid-cols-2 gap-6
         scrollbar-thin scrollbar-thumb-[#FFD369]/70 scrollbar-track-transparent"
         style={{ overscrollBehavior: 'contain' }}

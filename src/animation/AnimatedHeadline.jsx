@@ -11,7 +11,6 @@ const AnimatedHeadline = ({ text, className = '' }) => {
     const el = headlineRef.current;
     if (!el) return;
 
-    // Разбиваем текст на отдельные span-буквы
     const letters = text.split('');
     el.innerHTML = '';
 

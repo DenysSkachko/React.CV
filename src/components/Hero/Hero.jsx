@@ -8,7 +8,6 @@ const Hero = () => {
 
   const heroRef = useRef(null);
   const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
   const socialsRef = useRef(null);
   const timeoutRef = useRef(null);
 
@@ -27,7 +26,6 @@ const Hero = () => {
     const cleanup = animateHeroSection(
       heroRef,
       titleRef,
-      subtitleRef,
       socialsRef
     );
     return cleanup;
@@ -37,7 +35,7 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="z-11 relative bg-[url('/back.png')] bg-cover bg-center min-h-screen px-6 flex flex-col items-center justify-center overflow-hidden bg-[var(--color-dark)] text-[var(--color-light)] select-none shadow-xl"
+      className="z-11 relative  bg-cover bg-center min-h-screen px-6 flex flex-col items-center justify-center overflow-hidden bg-[var(--color-dark)] text-[var(--color-light)] select-none shadow-xl"
     >
       <div className="absolute w-[900px] h-[700px] top-[-200px] right-[-200px] z-0 blur-[160px] rounded-full mix-blend-lighten bg-[var(--color-accent)]/25" />
 
@@ -78,13 +76,6 @@ const Hero = () => {
             <span className="absolute inset-0 rounded bg-[var(--color-accent)] opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-300 -z-10" />
           </span>
         </h1>
-
-        <p
-          ref={subtitleRef}
-          className="max-w-xl text-lg md:text-xl text-[var(--color-light)]/80 select-text pointer-events-none"
-        >
-          Crafting modern web interfaces
-        </p>
 
         <SocialLinks ref={socialsRef} />
       </div>

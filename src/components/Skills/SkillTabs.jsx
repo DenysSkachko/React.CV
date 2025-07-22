@@ -250,6 +250,38 @@ const SkillTabs = React.forwardRef((props, ref) => {
 
   const containerRef = useRef(null);
   const cardRefs = useRef([]);
+  const expandedRef = useRef(null);
+
+  const handleCardClick = (index) => {
+    setActiveIndex(index);
+  };
+
+  useEffect(() => {
+    if (activeIndex !== null) {
+      const scrollToExpanded = () => {
+        if (expandedRef.current) {
+          const rect = expandedRef.current.getBoundingClientRect();
+          const scrollY = window.pageYOffset;
+
+          const fixedHeaderHeight = 200;
+
+          const targetPosition = rect.top + scrollY - fixedHeaderHeight;
+
+
+          window.scrollTo({
+            top: targetPosition > 0 ? targetPosition : 0,
+            behavior: 'smooth',
+          });
+        } else {
+          requestAnimationFrame(scrollToExpanded);
+        }
+      };
+
+      setTimeout(() => {
+        requestAnimationFrame(scrollToExpanded);
+      }, 100);
+    }
+  }, [activeIndex]);
 
   useEffect(() => {
     cardRefs.current = cardRefs.current.slice(0, currentSkill.length);
@@ -282,16 +314,14 @@ const SkillTabs = React.forwardRef((props, ref) => {
         }
       );
     });
-
   }, [activeTab, currentSkill.length]);
 
   return (
     <section
       ref={ref}
       className="z-13 bg-[var(--color-dark)] text-[#141024] px-6 py-6 sm:px-12 lg:px-12"
-      aria-label="Projects Section"
     >
-      <div className="flex flex-col lg:flex-row max-w-6xl mx-auto gap-8 h-full">
+      <div className="flex flex-col lg:flex-row max-w-6xl mx-auto gap-8 h-full max-w-[1100px] mx-auto">
         <nav
           className="flex flex-col sm:flex-row lg:flex-col justify-center lg:justify-start gap-4 md:gap-8"
           role="tablist"
@@ -326,7 +356,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
           <AnimatePresence mode="wait">
             {activeIndex === null ? (
               <motion.div
-                key={activeTab}
+                key="skills-block"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
@@ -337,7 +367,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
                   <article
                     key={i}
                     ref={(el) => (cardRefs.current[i] = el)}
-                    onClick={() => setActiveIndex(i)}
+                    onClick={() => handleCardClick(i)}
                     className="bg-[var(--color-light)] text-[var(--color-dark)] rounded-lg p-4 shadow-lg flex flex-col items-center cursor-pointer"
                     tabIndex={0}
                     onKeyDown={(e) => {
@@ -356,12 +386,13 @@ const SkillTabs = React.forwardRef((props, ref) => {
               </motion.div>
             ) : (
               <motion.div
+                ref={expandedRef}
                 key="expanded"
                 initial={{ opacity: 0, y: 100, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -60, scale: 0.9 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="absolute top-0 left-0 w-full h-auto bg-[var(--color-light)] text-[var(--color-dark)] rounded-2xl shadow-2xl p-10 z-10"
+                className="w-full h-auto bg-[var(--color-light)] text-[var(--color-dark)] rounded-2xl p-10 z-10"
               >
                 <img
                   src={expandedSkill.logo}

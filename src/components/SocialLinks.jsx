@@ -13,10 +13,13 @@ const socials = [
   { Icon: FaInstagram, url: 'https://instagram.com/denys.skachko' },
   { Icon: FaTelegramPlane, url: 'https://t.me/stormstyle' },
   { Icon: FaGithub, url: 'https://github.com/DenysSkachko' },
-  { Icon: FaLinkedin, url: 'https://linkedin.com' },
+  {
+    Icon: FaLinkedin,
+    url: 'https://www.linkedin.com/in/denys-skachko-9ba871374/',
+  },
   { Icon: SiGmail, url: 'mailto:denya.skachko@gmail.com' },
-  { Icon: FaDiscord, url: 'https://discord.com' },
-  { Icon: BsTwitter, url: 'https://twitter.com' },
+  { Icon: FaDiscord, url: 'https://discord.gg/rs6Br2v5' },
+  { Icon: BsTwitter, url: 'https://x.com/denys_skachko' },
 ];
 
 const SocialLinks = React.forwardRef((props, ref) => {

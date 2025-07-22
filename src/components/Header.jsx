@@ -59,8 +59,6 @@ const Header = () => {
         onEnterBack: () => setActiveSection(href),
       });
     });
-
-  
   }, []);
 
   const jumpToSection = (href) => {
@@ -93,14 +91,6 @@ const Header = () => {
           pin: true,
           pinSpacing: false,
           id: 'pin-skills',
-        });
-
-        ScrollTrigger.create({
-          trigger: '#projects',
-          start: 'top top',
-          pin: true,
-          pinSpacing: false,
-          id: 'pin-projects',
         });
 
         ScrollTrigger.refresh();
