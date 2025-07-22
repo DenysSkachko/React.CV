@@ -267,7 +267,6 @@ const SkillTabs = React.forwardRef((props, ref) => {
 
           const targetPosition = rect.top + scrollY - fixedHeaderHeight;
 
-
           window.scrollTo({
             top: targetPosition > 0 ? targetPosition : 0,
             behavior: 'smooth',
@@ -285,6 +284,8 @@ const SkillTabs = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     cardRefs.current = cardRefs.current.slice(0, currentSkill.length);
+
+    if (window.innerWidth < 768) return;
 
     cardRefs.current.forEach((card, i) => {
       if (!card) return;
