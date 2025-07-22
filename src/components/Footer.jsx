@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="flex flex-col justify-center items-center h-full gap-5">
         <a
           href="https://t.me/stormstyle"
-          className="px-20 py-3 bg-[var(--color-accent)] rounded font-extrabold uppercase shadow-2xl cursor-pointer select-none hover:bg-[var(--color-light)] hover:text-[var(--color-dark)]"
+          className="animate-bounce px-20 py-3 bg-[var(--color-accent)] rounded font-extrabold uppercase shadow-2xl cursor-pointer select-none hover:bg-[var(--color-light)] hover:text-[var(--color-dark)]"
         >
           Contact Me
         </a>
