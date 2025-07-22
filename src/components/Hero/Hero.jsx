@@ -23,11 +23,7 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    const cleanup = animateHeroSection(
-      heroRef,
-      titleRef,
-      socialsRef
-    );
+    const cleanup = animateHeroSection(heroRef, titleRef, socialsRef);
     return cleanup;
   }, []);
 
@@ -47,7 +43,7 @@ const Hero = () => {
         style={{ width: '300px', maxWidth: '80vw' }}
       >
         <img
-          src="./main-img.png"
+          src="./main-img.webp"
           alt="Denys"
           className="w-full h-auto object-contain object-top scale-[1.55]"
           draggable={false}
@@ -64,7 +60,7 @@ const Hero = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            Denys 
+            Denys
           </span>
           <span className="text-[var(--color-accent)] hover:scale-[1.1] hover:-rotate-[1deg] transition-transform duration-300">
             Skachko
