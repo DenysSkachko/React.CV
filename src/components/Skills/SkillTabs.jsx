@@ -285,36 +285,43 @@ const SkillTabs = React.forwardRef((props, ref) => {
   useEffect(() => {
     cardRefs.current = cardRefs.current.slice(0, currentSkill.length);
 
-    if (window.innerWidth < 768) return;
+    const ctx = gsap.context(() => {
+      ScrollTrigger.matchMedia({
+        '(min-width: 768px)': () => {
+          cardRefs.current.forEach((card, i) => {
+            if (!card) return;
 
-    cardRefs.current.forEach((card, i) => {
-      if (!card) return;
-      gsap.fromTo(
-        card,
-        {
-          opacity: 0,
-          y: 80,
-          rotateX: 45,
-          transformOrigin: 'center bottom',
-          perspective: 600,
+            gsap.fromTo(
+              card,
+              {
+                opacity: 0,
+                y: 80,
+                rotateX: 45,
+                transformOrigin: 'center bottom',
+                perspective: 600,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                duration: 1.4,
+                ease: 'bounce.out',
+                delay: i * 0.12,
+                scrollTrigger: {
+                  trigger: card,
+                  start: 'top 90%',
+                  toggleActions: 'play reset play reset',
+                  invalidateOnRefresh: true,
+                  refreshPriority: 1,
+                },
+              }
+            );
+          });
         },
-        {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 1.4,
-          ease: 'bounce.out',
-          delay: i * 0.12,
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 90%',
-            toggleActions: 'play reset play reset',
-            invalidateOnRefresh: true,
-            refreshPriority: 1,
-          },
-        }
-      );
+      });
     });
+
+    return () => ctx.revert();
   }, [activeTab, currentSkill.length]);
 
   return (
