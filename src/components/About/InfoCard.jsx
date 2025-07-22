@@ -101,58 +101,68 @@ const InfoCard = () => {
         }
       );
     });
-
   }, []);
+
+  const softSkills =
+    infoData.find((item) => item.id === 'softskills')?.skills || [];
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1100px] mx-auto relative ">
-        {infoData.map(({ id, icon, label, value, flag }, i) => (
-          <div
-            key={id}
-            ref={(el) => (cardRefs.current[i] = el)}
-            className={`relative bg-[var(--color-dark)] rounded-3xl shadow-xl
-            transition-transform duration-300 hover:scale-105 hover:bg-[#372e5f]
-            ${id === 'softskills' ? 'cursor-pointer' : 'cursor-default'}`}
-            tabIndex={id === 'softskills' ? 0 : -1}
-            role={id === 'softskills' ? 'button' : undefined}
-            onClick={() => id === 'softskills' && setSoftSkillsOpen(true)}
-            onKeyDown={(e) => {
-              if (id === 'softskills' && (e.key === 'Enter' || e.key === ' ')) {
-                setSoftSkillsOpen(true);
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1100px] mx-auto relative">
+        {infoData.map(({ id, icon, label, value, flag, isInteractive }, i) => {
+          const isButton = id === 'softskills';
+
+          return (
+            <div
+              key={id}
+              ref={(el) => (cardRefs.current[i] = el)}
+              className={`relative bg-[var(--color-dark)] rounded-3xl shadow-xl
+              transition-transform duration-300 hover:scale-105 hover:bg-[#372e5f]
+              ${isButton ? 'cursor-pointer' : 'cursor-default'}`}
+              role={isButton ? 'button' : undefined}
+              tabIndex={isButton ? 0 : undefined}
+              onClick={() => isButton && setSoftSkillsOpen(true)}
+              onKeyDown={(e) => {
+                if (isButton && (e.key === 'Enter' || e.key === ' ')) {
+                  e.preventDefault();
+                  setSoftSkillsOpen(true);
+                }
+              }}
+              aria-label={
+                isButton ? 'Open Soft Skills Modal' : `${label}: ${value}`
               }
-            }}
-          >
-            <div className="p-6" data-inner>
-              <div className="flex items-center gap-4">
-                <div className="p-2 bg-[#FFD369]/10 text-[var(--color-alt)] rounded-lg">
-                  {icon}
+            >
+              <div className="p-6" data-inner>
+                <div className="flex items-center gap-4">
+                  <div className="p-2 bg-[#FFD369]/10 text-[var(--color-alt)] rounded-lg">
+                    {icon}
+                  </div>
+                  <span className="uppercase tracking-wider text-[var(--color-alt)] font-semibold text-xs sm:text-sm">
+                    {label}
+                  </span>
                 </div>
-                <span className="uppercase tracking-wider text-[var(--color-alt)] font-semibold text-xs sm:text-sm">
-                  {label}
-                </span>
-              </div>
-              <div className="flex items-center justify-between mt-3">
-                <p className="text-[var(--color-light)] text-xl font-bold">
-                  {value}
-                </p>
-                {flag && (
-                  <img
-                    src={`https://flagcdn.com/w40/${flag}.png`}
-                    alt={`${label} flag`}
-                    className="w-8 h-5 rounded-sm shadow-lg border border-[#FFD369]/50"
-                  />
-                )}
+                <div className="flex items-center justify-between mt-3">
+                  <p className="text-[var(--color-light)] text-xl font-bold">
+                    {value}
+                  </p>
+                  {flag && (
+                    <img
+                      src={`https://flagcdn.com/w40/${flag}.png`}
+                      alt={`${label} flag`}
+                      className="w-8 h-5 rounded-sm shadow-lg border border-[#FFD369]/50"
+                    />
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <SoftSkillsModal
         isOpen={softSkillsOpen}
         onClose={() => setSoftSkillsOpen(false)}
-        skills={infoData.find((item) => item.id === 'softskills').skills}
+        skills={softSkills}
       />
     </>
   );

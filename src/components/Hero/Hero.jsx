@@ -43,10 +43,12 @@ const Hero = () => {
         style={{ width: '300px', maxWidth: '80vw' }}
       >
         <img
-          src="./main-img.webp"
+          src="/main-img.webp"
           alt="Denys"
           className="w-full h-auto object-contain object-top scale-[1.55]"
           draggable={false}
+          width={518}
+          height={888}
         />
       </div>
 

@@ -332,33 +332,43 @@ const SkillTabs = React.forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
+      aria-labelledby="skills-tabs-heading"
       className="z-13 bg-[var(--color-dark)] text-[#141024] px-6 py-6 sm:px-12 lg:px-12"
     >
-      <div className="flex flex-col lg:flex-row max-w-6xl mx-auto gap-8 h-full max-w-[1100px] mx-auto">
+      <h2 id="skills-tabs-heading" className="sr-only">
+        Навыки — категории и детали
+      </h2>
+
+      <div className="flex flex-col lg:flex-row max-w-[1100px] mx-auto gap-8">
         <nav
-          className="flex flex-col sm:flex-row lg:flex-col justify-center lg:justify-start gap-4 md:gap-8"
           role="tablist"
+          aria-label="Навигация по категориям навыков"
           aria-orientation="vertical"
-          style={{ minWidth: '140px' }}
+          className="flex flex-col sm:flex-row lg:flex-col justify-center lg:justify-start gap-4 md:gap-8"
+          style={{ minWidth: 140 }}
         >
           {tabs.map(({ id, label }) => (
             <button
               key={id}
               role="tab"
+              id={`tab-${id}`}
               aria-selected={activeTab === id}
               aria-controls={`tabpanel-${id}`}
-              id={`tab-${id}`}
+              aria-expanded={activeTab === id}
               tabIndex={activeTab === id ? 0 : -1}
               onClick={() => {
                 setActiveTab(id);
                 setActiveIndex(null);
               }}
-              className={`rounded-lg px-4 py-3 font-semibold transition-colors duration-300 focus:outline-none ${
-                activeTab === id
+              className={`
+                rounded-lg px-4 py-3 font-semibold transition-colors duration-300 focus:outline-none focus:ring
+                ${activeTab === id
                   ? 'bg-[var(--color-accent)] text-[#141024] shadow-lg'
                   : 'bg-[#2a2a3a] text-[#888] hover:bg-[#3c3c54] hover:text-white'
-              }`}
-              style={{ minWidth: '120px', textAlign: 'center' }}
+                }
+              `}
+              style={{ minWidth: 120, textAlign: 'center' }}
+              type="button"
             >
               {label}
             </button>
@@ -370,6 +380,10 @@ const SkillTabs = React.forwardRef((props, ref) => {
             {activeIndex === null ? (
               <motion.div
                 key="skills-block"
+                role="tabpanel"
+                id={`tabpanel-${activeTab}`}
+                aria-labelledby={`tab-${activeTab}`}
+                tabIndex={0}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
@@ -380,18 +394,23 @@ const SkillTabs = React.forwardRef((props, ref) => {
                   <article
                     key={i}
                     ref={(el) => (cardRefs.current[i] = el)}
-                    onClick={() => handleCardClick(i)}
-                    className="bg-[var(--color-light)] text-[var(--color-dark)] rounded-lg p-4 shadow-lg flex flex-col items-center cursor-pointer"
+                    role="button"
+                    aria-pressed={activeIndex === i}
+                    aria-label={`Подробнее о ${title}`}
                     tabIndex={0}
+                    onClick={() => handleCardClick(i)}
                     onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') setActiveIndex(i);
+                      if (e.key === 'Enter' || e.key === ' ') handleCardClick(i);
                     }}
+                    className="bg-[var(--color-light)] text-[var(--color-dark)] rounded-lg p-4 shadow-lg flex flex-col items-center cursor-pointer focus:outline-none focus:ring"
                   >
                     <img
                       src={logo}
                       alt={`${title} logo`}
                       className="w-16 h-16 mb-4 rounded-[10px]"
                       draggable={false}
+                      width={64}
+                      height={64}
                     />
                     <h3 className="text-2xl font-bold text-center">{title}</h3>
                   </article>
@@ -401,6 +420,10 @@ const SkillTabs = React.forwardRef((props, ref) => {
               <motion.div
                 ref={expandedRef}
                 key="expanded"
+                role="tabpanel"
+                id={`tabpanel-expanded-${activeTab}`}
+                aria-labelledby={`tab-${activeTab}`}
+                tabIndex={0}
                 initial={{ opacity: 0, y: 100, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -60, scale: 0.9 }}
@@ -411,6 +434,9 @@ const SkillTabs = React.forwardRef((props, ref) => {
                   src={expandedSkill.logo}
                   alt={expandedSkill.title}
                   className="w-16 h-16 mb-6 rounded-[10px]"
+                  draggable={false}
+                  width={64}
+                  height={64}
                 />
                 <h3 className="text-3xl font-bold mb-6">
                   {expandedSkill.title}
@@ -419,17 +445,19 @@ const SkillTabs = React.forwardRef((props, ref) => {
                   {expandedSkill.desc}
                 </p>
 
-                {expandedSkill.points &&
-                  Array.isArray(expandedSkill.points) && (
-                    <ul className="list-disc list-inside space-y-2">
-                      {expandedSkill.points.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
+                {expandedSkill.points?.length && (
+                  <ul className="list-disc list-inside space-y-2">
+                    {expandedSkill.points.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+
                 <button
                   onClick={() => setActiveIndex(null)}
-                  className="absolute top-4 right-4 bg-[var(--color-dark)] text-[var(--color-light)] px-4 py-2 rounded-md text-sm hover:bg-[#333] transition"
+                  className="absolute top-4 right-4 bg-[var(--color-dark)] text-[var(--color-light)] px-4 py-2 rounded-md text-sm hover:bg-[#333] focus:outline-none focus:ring transition"
+                  aria-label="Закрыть подробности навыка"
+                  type="button"
                 >
                   Close
                 </button>
