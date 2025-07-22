@@ -99,7 +99,10 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="relative w-screen min-h-screen overflow-hidden bg-[var(--color-accent)] py-10 sm:py-20 shadow-2xl px-10">
+    <div
+      className="relative w-screen min-h-screen overflow-hidden bg-[var(--color-accent)] py-10 sm:py-20 shadow-2xl px-10"
+      style={{ boxShadow: '0 0px 100px 1px rgba(0, 0, 0, 0.50)' }}
+    >
       <AnimatedHeadline
         text="Projects"
         className="mb-10 sm:mb-0 text-white max-w-6xl mx-auto"

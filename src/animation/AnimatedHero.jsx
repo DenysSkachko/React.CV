@@ -1,4 +1,3 @@
-
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -31,8 +30,6 @@ export const animateHeroSection = (
       0.1
     );
 
-  
-
     timeline.to(
       socialsRef.current,
       {
@@ -42,27 +39,6 @@ export const animateHeroSection = (
       },
       0.3
     );
-
-    const enterTimeline = gsap.timeline();
-
-    enterTimeline
-      .from(titleRef.current, {
-        y: 80,
-        opacity: 0,
-        duration: 1.1,
-        ease: 'power3.out',
-      })
-      .from(
-        socialsRef.current,
-        {
-          y: 40,
-          opacity: 0,
-          stagger: 0.08,
-          duration: 0.9,
-          ease: 'back.out(1.8)',
-        },
-        '-=0.6'
-      );
   }, heroRef);
 
   return () => ctx.revert();
