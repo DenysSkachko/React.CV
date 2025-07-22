@@ -68,7 +68,7 @@ const skillsData = {
         'Using variants like hover:, focus:, dark:',
         'Customization via Tailwind config file',
       ],
-      logo: 'https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg',
+      logo: './tailwind.svg',
     },
     {
       title: 'TypeScript',
