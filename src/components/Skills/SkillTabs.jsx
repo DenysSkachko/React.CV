@@ -394,7 +394,6 @@ const SkillTabs = React.forwardRef((props, ref) => {
                   <article
                     key={i}
                     ref={(el) => (cardRefs.current[i] = el)}
-                    role="button"
                     aria-pressed={activeIndex === i}
                     aria-label={`Подробнее о ${title}`}
                     tabIndex={0}

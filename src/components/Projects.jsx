@@ -164,6 +164,8 @@ const Projects = () => {
                 ? 'bg-[var(--color-dark)] border-[var(--color-dark)] scale-125'
                 : 'bg-transparent border-white hover:scale-110'
             }`}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={current === index ? 'true' : undefined}
           />
         ))}
       </div>

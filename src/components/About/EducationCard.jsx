@@ -75,18 +75,18 @@ const EducationCard = ({ title, index }) => {
       >
         <div className="hover:bg-[#372e5f] flip-front absolute w-full h-full backface-hidden rounded-3xl flex flex-col justify-center items-center p-6 text-center bg-[var(--color-dark)]">
           <BookOpen className="text-[var(--color-alt)] w-10 h-10 mb-3" />
-          <h4 className="text-[var(--color-light)] font-extrabold text-2xl mb-2">
+          <h3 className="text-[var(--color-light)] font-extrabold text-2xl mb-2">
             {title}
-          </h4>
+          </h3>
           <p className="text-[#ccc] text-base">Click to flip</p>
         </div>
         <div
           className="flip-back absolute w-full h-full backface-hidden rounded-3xl p-6 text-[var(--color-light)] flex flex-col justify-center bg-[var(--color-dark)]"
           style={{ transform: 'rotateY(180deg)' }}
         >
-          <h4 className="font-extrabold sm:text-xl mb-3">
+          <h3 className="font-extrabold sm:text-xl mb-3">
             SIMON KUZNETS KHARKIV NATIONAL UNIVERSITY OF ECONOMICS
-          </h4>
+          </h3>
           <p className="mb-1 text-sm">
             <span className="font-semibold">Faculty:</span> Management and
             Marketing
