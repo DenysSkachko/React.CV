@@ -149,7 +149,10 @@ const InfoCard = () => {
                     <img
                       src={`https://flagcdn.com/w40/${flag}.png`}
                       alt={`${label} flag`}
-                      className="w-8 h-5 rounded-sm shadow-lg border border-[#FFD369]/50"
+                      className="w-10 h-5 rounded-sm shadow-lg border border-[#FFD369]/50"
+                      width={40}
+                      height={20}
+                      loading="lazy"
                     />
                   )}
                 </div>

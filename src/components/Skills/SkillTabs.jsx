@@ -68,7 +68,7 @@ const skillsData = {
         'Using variants like hover:, focus:, dark:',
         'Customization via Tailwind config file',
       ],
-      logo: 'https://www.svgrepo.com/show/374118/tailwind.svg',
+      logo: 'https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg',
     },
     {
       title: 'TypeScript',
@@ -362,9 +362,10 @@ const SkillTabs = React.forwardRef((props, ref) => {
               }}
               className={`
                 rounded-lg px-4 py-3 font-semibold transition-colors duration-300 focus:outline-none focus:ring
-                ${activeTab === id
-                  ? 'bg-[var(--color-accent)] text-[#141024] shadow-lg'
-                  : 'bg-[#2a2a3a] text-[#888] hover:bg-[#3c3c54] hover:text-white'
+                ${
+                  activeTab === id
+                    ? 'bg-[var(--color-accent)] text-[#141024] shadow-lg'
+                    : 'bg-[#2a2a3a] text-[#888] hover:bg-[#3c3c54] hover:text-white'
                 }
               `}
               style={{ minWidth: 120, textAlign: 'center' }}
@@ -391,15 +392,18 @@ const SkillTabs = React.forwardRef((props, ref) => {
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
               >
                 {currentSkill.map(({ title, logo }, i) => (
-                  <article
+                  <button
                     key={i}
                     ref={(el) => (cardRefs.current[i] = el)}
                     aria-pressed={activeIndex === i}
                     aria-label={`Подробнее о ${title}`}
-                    tabIndex={0}
+                    type="button"
                     onClick={() => handleCardClick(i)}
                     onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') handleCardClick(i);
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleCardClick(i);
+                      }
                     }}
                     className="bg-[var(--color-light)] text-[var(--color-dark)] rounded-lg p-4 shadow-lg flex flex-col items-center cursor-pointer focus:outline-none focus:ring"
                   >
@@ -412,7 +416,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
                       height={64}
                     />
                     <h3 className="text-2xl font-bold text-center">{title}</h3>
-                  </article>
+                  </button>
                 ))}
               </motion.div>
             ) : (
