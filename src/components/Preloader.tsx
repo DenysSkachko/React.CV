@@ -66,7 +66,7 @@ const Preloader = () => {
       <div className="absolute inset-0 origin-top-left -skew-y-12 overflow-hidden">
         <div
           ref={lightRef}
-          className="absolute inset-0 bg-[var(--color-light)] flex items-center justify-center pb-70 xl:pb-50"
+          className="absolute inset-0 bg-[var(--color-light)] flex items-center justify-center pb-70 xl:pb-20"
         >
           <h1 className="text-[var(--color-dark)] text-[150px] font-bold z-[100]">
             {' '}

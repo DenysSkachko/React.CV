@@ -18,7 +18,6 @@ const socials = [
     url: 'https://www.linkedin.com/in/denys-skachko-9ba871374/',
   },
   { Icon: SiGmail, url: 'mailto:denya.skachko@gmail.com' },
-  { Icon: FaDiscord, url: 'https://discord.gg/rs6Br2v5' },
   { Icon: BsTwitter, url: 'https://x.com/denys_skachko' },
 ];
 

@@ -239,6 +239,18 @@ const skillsData = {
         'Animating SVGs and DOM elements',
       ],
     },
+    {
+      title: 'Framer Motion',
+      desc: 'This project using this library, 85% animation by GSAP',
+      logo: 'https://cdn.worldvectorlogo.com/logos/framer-motion.svg',
+      points: [
+        'Basic tweens and timelines (`gsap.to`, `.from`, `.timeline`)',
+        'ScrollTrigger: animations on scroll',
+        'Stagger, delay, and easing',
+        'Combining GSAP with React (useEffect, refs)',
+        'Animating SVGs and DOM elements',
+      ],
+    },
   ],
 };
 
