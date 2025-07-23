@@ -2,34 +2,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import Modal from './Modal';
 import AnimatedHeadline from '../animation/AnimatedHeadline';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
-const projects = [
-  {
-    title: 'WhitePace Landing',
-    description:
-      'This is my first project that I worked on independently, outside of any formal training. I created a custom theme and integrated it into WordPress using PHP. The layout was built with plain HTML5 and native CSS. All the content on the page is dynamic, managed via Gutenberg blocks, which I also developed using PHP.A review system with ratings was added, implemented through Axios.',
-    image: './project1.webp',
-    color: '#FFD369',
-  },
-  {
-    title: 'FutureTech multi-page',
-    description:
-      'This project is more complex — a multi-page site deployed on WordPress, with all blocks dynamic through Gutenberg using PHP and JavaScript. The layout is built using the SCSS preprocessor, with a modular structure, mixins, and functions for responsive design, avoiding fixed pixel values. The site is animated using the GreenSock Animation Platform (GSAP). It includes custom archive pages and single post templates. Additionally, a lot of functionality is implemented using JavaScript.',
-    image: './project2.webp',
-    color: '#FFD369',
-  },
-  {
-    title: 'Bento Web',
-    description:
-      'This was originally a test project built with React. Support for light and dark themes was added, using the Vite bundler. Animations are implemented with the framer-motion library. The layout is written using the Tailwind CSS utility framework, and this project was my starting point for using Tailwind.',
-    image: './project3.webp',
-    color: '#FFD369',
-  },
-];
+import { projects } from '../data/projectCards';
+import { animateProjects } from '../animation/AnimatedProjects';
 
 const Projects = () => {
   const [current, setCurrent] = useState(0);
@@ -49,53 +23,7 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    titleRefs.current.forEach((el, index) => {
-      if (!el) return;
-
-      if (el._gsapScrollTrigger) return;
-
-      gsap.fromTo(
-        el,
-        { opacity: 0, x: 50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 90%',
-            end: 'bottom 20%',
-            scrub: true,
-            id: `title-${index}`,
-          },
-        }
-      );
-    });
-
-    descRefs.current.forEach((el, index) => {
-      if (!el) return;
-
-      if (el._gsapScrollTrigger) return;
-
-      gsap.fromTo(
-        el,
-        { opacity: 0, x: 50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 90%',
-            end: 'bottom 20%',
-            scrub: true,
-            id: `desc-${index}`,
-          },
-        }
-      );
-    });
+    animateProjects(titleRefs, descRefs);
   }, []);
 
   return (
@@ -129,14 +57,14 @@ const Projects = () => {
               >
                 <div
                   onClick={() => setIsModalOpen(true)}
-                  className="relative z-10 p-8 xl:p-14 bg-[var(--color-accent)] hover:bg-red-700 rounded-2xl shadow-2xl max-w-[90%] mx-auto cursor-pointer"
+                  className="relative z-10 p-8 xl:p-14 bg-[var(--color-accent)] rounded-2xl shadow-2xl max-w-[90%] mx-auto cursor-pointer"
                   style={{
                     boxShadow: 'inset 0 4px 20px rgba(0, 0, 0, 0.4)',
                   }}
                 >
                   <motion.h2
                     ref={(el) => (titleRefs.current[index] = el)}
-                    className="text-white  text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-5 "
+                    className="text-[var(--color-light)]  text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-5 hover:text-[var(--color-dark)]"
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{

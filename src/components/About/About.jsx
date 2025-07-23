@@ -5,7 +5,7 @@ import AnimatedHeadline from '../../animation/AnimatedHeadline';
 
 const About = () => {
   return (
-    <section
+    <div
       className="z-10 relative  pt-10 sm:pb-50 sm:pt-20 bg-[var(--color-accent)] text-white select-none shadow-xl min-h-screen p-4 overflow-hidden"
       aria-label="About Me Section"
     >
@@ -20,7 +20,7 @@ const About = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

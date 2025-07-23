@@ -1,106 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MapPin, Cake, Languages, CalendarDays, Sparkles } from 'lucide-react';
 import SoftSkillsModal from '../SoftSkillsModal';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
-const infoData = [
-  {
-    id: 'location',
-    label: 'Location',
-    value: 'Kharkiv, Ukraine',
-    icon: <MapPin className="w-6 h-6" />,
-    flag: 'ua',
-  },
-  {
-    id: 'age',
-    label: 'Age',
-    value: '25 Years',
-    icon: <Cake className="w-6 h-6" />,
-  },
-  {
-    id: 'birthdate',
-    label: 'Birthdate',
-    value: '25.10.1999',
-    icon: <CalendarDays className="w-6 h-6" />,
-  },
-  {
-    id: 'english',
-    label: 'English',
-    value: 'B2 Level',
-    icon: <Languages className="w-6 h-6" />,
-    flag: 'gb',
-  },
-  {
-    id: 'ukrainian',
-    label: 'Ukrainian',
-    value: 'Native',
-    icon: <Languages className="w-6 h-6" />,
-    flag: 'ua',
-  },
-  {
-    id: 'softskills',
-    label: 'Soft Skills',
-    value: 'Click to explore',
-    icon: <Sparkles className="w-6 h-6" />,
-    isInteractive: true,
-    skills: [
-      {
-        name: 'Problem Solving',
-        description: 'Analytical & creative problem solving.',
-      },
-      { name: 'Teamwork', description: 'Effective collaboration skills.' },
-      {
-        name: 'Adaptability',
-        description: 'Thriving in changing environments.',
-      },
-      {
-        name: 'Communication',
-        description: 'Clear and persuasive communication.',
-      },
-      { name: 'Time Management', description: 'Prioritization & planning.' },
-    ],
-  },
-];
+import { animateInfoCards } from '../../animation/AnimatedInfoCards';
+import infoData from '../../data/infoCards';
 
 const InfoCard = () => {
   const [softSkillsOpen, setSoftSkillsOpen] = useState(false);
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    cardRefs.current.forEach((outerCard, i) => {
-      if (!outerCard) return;
-      const inner = outerCard.querySelector('[data-inner]');
-      if (!inner) return;
-
-      gsap.fromTo(
-        inner,
-        {
-          opacity: 0,
-          y: 80,
-          rotateX: 45,
-          transformOrigin: 'center bottom',
-          perspective: 600,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 1.4,
-          ease: 'bounce.out',
-          delay: i * 0.12,
-          scrollTrigger: {
-            trigger: outerCard,
-            start: 'top 90%',
-            toggleActions: 'play reset play reset',
-            invalidateOnRefresh: true,
-            refreshPriority: 1,
-          },
-        }
-      );
-    });
+    animateInfoCards(cardRefs.current);
   }, []);
 
   const softSkills =

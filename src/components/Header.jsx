@@ -11,8 +11,7 @@ const links = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' } /* 
-  { href: '#feedback', label: 'Feedback' }, */,
+  { href: '#projects', label: 'Projects' } ,
 ];
 
 const Burger = ({ isOpen, toggle }) => (
@@ -29,21 +28,6 @@ const Header = () => {
   const navRef = useRef(null);
   const [activeSection, setActiveSection] = useState('#home');
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-      gsap.fromTo(
-        '[data-header]',
-        { y: -150, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.5,
-          ease: 'expo.out',
-        }
-      );
-    }
-  }, []);
 
   useEffect(() => {
     links.forEach(({ href }) => {

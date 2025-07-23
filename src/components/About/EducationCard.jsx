@@ -1,44 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BookOpen } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { animateEducationCard } from '../../animation/AnimatedEducationCards';
 
 const EducationCard = ({ title, index }) => {
   const [flipped, setFlipped] = useState(false);
   const cardRef = useRef(null);
 
   useEffect(() => {
-    if (!cardRef.current) return;
-
-    const el = cardRef.current;
-
-    gsap.fromTo(
-      el,
-      {
-        opacity: 0,
-        y: 100,
-        skewY: 10,
-        scale: 2,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        skewY: 0,
-        scale: 1,
-        duration: 1,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 90%',
-          toggleActions: 'play reset play reset',
-          invalidateOnRefresh: true,
-          refreshPriority: 1,
-        },
-      }
-    );
-
+    animateEducationCard(cardRef.current);
   }, []);
 
   const toggleFlip = (e) => {
