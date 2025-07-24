@@ -57,14 +57,14 @@ const Projects = () => {
               >
                 <div
                   onClick={() => setIsModalOpen(true)}
-                  className="relative z-10 p-8 xl:p-14 bg-[var(--color-accent)] rounded-2xl shadow-2xl max-w-[90%] mx-auto cursor-pointer"
+                  className="relative z-10 p-8 xl:p-14 bg-[var(--color-light)] rounded-2xl shadow-2xl max-w-[90%] mx-auto cursor-pointer"
                   style={{
                     boxShadow: 'inset 0 4px 20px rgba(0, 0, 0, 0.4)',
                   }}
                 >
                   <motion.h2
                     ref={(el) => (titleRefs.current[index] = el)}
-                    className="text-[var(--color-light)]  text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-5 hover:text-[var(--color-dark)]"
+                    className="text-[var(--color-dark)]  text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-5 hover:text-[var(--color-accent)]"
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{
@@ -117,20 +117,46 @@ const Projects = () => {
       </div>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className="max-h-[80vh] overflow-y-auto px-4">
-          <h3 className="text-2xl font-bold mb-4 text-[var(--color-light)]">
-            {projects[current].title}
-          </h3>
-          <p className="text-lg text-[var(--color-light)]">
-            {projects[current].description}
-          </p>
-          <img
-            src={projects[current].image}
-            alt={projects[current].title}
-            className="mt-6 rounded-lg"
-          />
-        </div>
-      </Modal>
+  <div className="max-h-[80vh] overflow-y-auto px-4">
+    <h3 className="text-2xl font-bold mb-4 text-[var(--color-light)]">
+      {projects[current].title}
+    </h3>
+    <p className="text-lg text-[var(--color-light)]">
+      {projects[current].description}
+    </p>
+    <div className="mt-6 flex flex-wrap gap-2">
+      {projects[current].tech?.map((techName, index) => (
+        <button
+          key={index}
+          className="text-sm px-3 py-1 rounded-2xl border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-black transition"
+          type="button"
+        >
+          {techName}
+        </button>
+      ))}
+    </div>
+    {projects[current].video ? (
+      <video
+        src={projects[current].video}
+        controls
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="mt-6 rounded-lg"
+      />
+    ) : (
+      <img
+        src={projects[current].image}
+        alt={projects[current].title}
+        className="mt-6 rounded-lg"
+      />
+    )}
+
+    
+  </div>
+</Modal>
+
     </div>
   );
 };

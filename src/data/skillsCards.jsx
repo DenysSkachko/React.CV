@@ -31,7 +31,7 @@ export const skillsData = {
     },
     {
       title: 'JavaScript',
-      desc: 'I study JavaScript every day to this day, including new libraries',
+      desc: "JavaScript is what I use and study every day. I've completed a JS course, and even after that I realize there's still so much more to learn. This project is about 95% built with JavaScript. In past projects without frameworks, I used JS to implement tabs, modals, theme switchers, and burger menus. In my latest project (already using TypeScript), I worked with localStorage. In one of the older projects using jQuery, I implemented live site search functionality.",
       points: [
         'DOM manipulation and events',
         'ES6+ features',
@@ -43,7 +43,7 @@ export const skillsData = {
     },
     {
       title: 'React',
-      desc: 'In particular, this resume site is built on React.',
+      desc: "Among the main JavaScript frameworks, React is my favorite. This project is also built on React. I follow a solid component-based architecture and actively use all core React hooks. I've added React to my main tech stack and plan to continue deepening my knowledge and experience with this framework.",
       points: [
         'Components and props',
         'State and hooks',
@@ -54,18 +54,17 @@ export const skillsData = {
     },
     {
       title: 'Tailwind CSS',
-      desc: 'Tailwind is my love, I did all my recent projects on Tailwind, I see it as the main tool for working with CSS',
+      desc: "I primarily use this utility-first CSS framework for website layout. I'm confident with the syntax and proficient in building responsive interfaces. All of my recent projects were built using Tailwind. I value the speed and code readability it offers by keeping styles within the component, without switching between multiple files to fix layout issues.",
       points: [
         'Utility-first classes for rapid UI building',
         'Responsive design with breakpoint prefixes',
         'Using variants like hover:, focus:, dark:',
-        'Customization via Tailwind config file',
       ],
       logo: './tailwind.svg',
     },
     {
       title: 'TypeScript',
-      desc: 'In the process of learning',
+      desc: 'TypeScript is an essential foundation for modern projects. At first, I didn’t realize how important it was, but after building a project with it, I saw how valuable and helpful it is. Using TypeScript, I created a simple and clear planner app for an English teacher, and TypeScript played a key role in making the codebase reliable and understandable.',
       points: [
         'Static typing and interfaces',
         'Generics for reusable components',
@@ -87,7 +86,7 @@ export const skillsData = {
     },
     {
       title: 'PHP',
-      desc: 'Used PHP to create themes, plugins and gutenberg blocks for WordPress. There are several pet projects where PHP is the main language.',
+      desc: 'Aside from my early fragmented knowledge of HTML and CSS, PHP was the first technology I studied in depth. I used it to implement dynamic content on my own project. Now I can confidently work with Gutenberg blocks for WordPress, as well as develop custom plugins and themes.',
       points: [
         'Server-side scripting basics',
         'Sessions and cookies for user data persistence',
@@ -111,7 +110,7 @@ export const skillsData = {
   tools: [
     {
       title: 'Git',
-      desc: 'Version control system for tracking changes and collaborating in codebases.',
+      desc: 'Basic knowledge of Git, sufficient for effective code collaboration; actively use it in every project, making commits for every code change.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
       points: [
         'git init / clone / commit / push / pull / fetch',
@@ -123,7 +122,7 @@ export const skillsData = {
     },
     {
       title: 'GitHub',
-      desc: 'This page - working by GitHub',
+      desc: 'Basic GitHub skills similar to Git level; use it for storing all my code. Also have practical experience with GitHub Pages and GitHub Actions.',
       logo: 'https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/github/github-original.svg',
       points: [
         'Working with GitHub repositories (clone, fork, pull request)',
@@ -134,22 +133,20 @@ export const skillsData = {
     },
     {
       title: 'NPM',
-      desc: 'Used in all my projects.',
+      desc: 'I use npm mostly at a basic level with commands like npm run start, dev, and build, as well as custom scripts like npm run format for Prettier. I also use npm to add libraries such as GSAP and other packages like React Icons to my projects.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg',
       points: [
         '`npm init`, `npm install`, `npm uninstall`',
         'package.json structure & dependency management',
         'Using scripts (`npm run <script>`)',
-        'Global vs local packages',
       ],
     },
     {
       title: 'Vite',
-      desc: 'Used in all my projects.',
+      desc: "I haven't used many bundlers, but between Vite and Webpack, I found Vite easier to use and fully meeting my needs. For my main stack of React and Tailwind, it’s an excellent bundler.",
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg',
       points: [
         'Zero-config setup for React/Vue',
-        'Fast HMR (Hot Module Replacement)',
         '`vite.config.js` customization',
         'Aliasing and env variables',
         'Production builds and optimization',
@@ -159,7 +156,7 @@ export const skillsData = {
   config: [
     {
       title: 'Prettier',
-      desc: 'Code formatter that enforces consistent style across your codebase.',
+      desc: 'I use Prettier in every project to maintain code standards; it provides convenience and makes the code visually clean and pleasant to read.',
       logo: 'https://unpkg.com/simple-icons@v11/icons/prettier.svg',
       points: [
         'Automatic code formatting on save',
@@ -183,7 +180,7 @@ export const skillsData = {
     },
     {
       title: 'VS Code',
-      desc: 'VS Code my favorite IDE.',
+      desc: 'VS Code is my most comfortable IDE; I actively use built-in plugins and snippets to speed up coding.',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
       points: [
         'Extensions: Prettier, ESLint, Tailwind IntelliSense',
@@ -210,7 +207,7 @@ export const skillsData = {
     },
     {
       title: 'ACF',
-      desc: 'Advanced Custom Fields plugin for WordPress to build custom field groups and enhance content management.',
+      desc: 'I have practical experience with both the standard and PRO versions of ACF for creating dependencies in WordPress. It’s a useful tool, even though I prefer using native PHP for some tasks.',
       logo: 'https://cdn.brandfetch.io/idyxGctRjG/w/256/h/256/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1751030685548',
       points: [
         'Creating custom field groups for posts/pages',
@@ -222,7 +219,7 @@ export const skillsData = {
     },
     {
       title: 'GSAP',
-      desc: 'This project using this library, 85% animation by GSAP',
+      desc: "I confidently use GSAP for various complex entrance animations and actively utilize the ScrollTrigger plugin. In some cases, I've applied SplitText. About 85% of the animations in this portfolio are thanks to this library, showcasing what I can achieve.",
       logo: 'https://cdn.worldvectorlogo.com/logos/gsap-greensock.svg',
       points: [
         'Basic tweens and timelines (`gsap.to`, `.from`, `.timeline`)',
@@ -234,15 +231,8 @@ export const skillsData = {
     },
     {
       title: 'Framer Motion',
-      desc: 'This project using this library, 85% animation by GSAP',
+      desc: 'I included Framer Motion as an advanced addition; this portfolio contains animations implemented with it that GSAP cannot cover, such as slide transitions and tab section animations like the ones you’re viewing now. I would say I have a basic level of proficiency with this technology.',
       logo: 'https://cdn.worldvectorlogo.com/logos/framer-motion.svg',
-      points: [
-        'Basic tweens and timelines (`gsap.to`, `.from`, `.timeline`)',
-        'ScrollTrigger: animations on scroll',
-        'Stagger, delay, and easing',
-        'Combining GSAP with React (useEffect, refs)',
-        'Animating SVGs and DOM elements',
-      ],
     },
   ],
 };
