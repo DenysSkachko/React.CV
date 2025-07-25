@@ -42,19 +42,21 @@ const infoData = [
     isInteractive: true,
     skills: [
       {
-        name: 'Problem Solving',
-        description: 'Analytical & creative problem solving.',
+        name: 'Structured Clarity',
+        description: 'Structured thinking under chaos',
       },
-      { name: 'Teamwork', description: 'Effective collaboration skills.' },
+      { name: 'Seamless Switching', description: 'Fast context switcher' },
       {
-        name: 'Adaptability',
-        description: 'Thriving in changing environments.',
+        name: 'Clear by Default',
+        description: 'Clarity-first communicator',
       },
       {
-        name: 'Communication',
-        description: 'Clear and persuasive communication.',
+        name: 'Preventive Thinker',
+        description: 'Built-in debug mindset',
       },
-      { name: 'Time Management', description: 'Prioritization & planning.' },
+      { name: 'Keep Calm', description: 'Calm under irrational pressure' },
+      
+      { name: 'Learn Daily', description: 'Every day I learn something new to upgrade my thinking, tools, or workflow' },
     ],
   },
 ];

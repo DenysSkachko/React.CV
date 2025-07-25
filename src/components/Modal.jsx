@@ -44,20 +44,18 @@ const Modal = ({ isOpen, onClose, children }) => {
               flex flex-col justify-center items-center
               backdrop-filter backdrop-blur-lg rounded-3xl p-8 xl:p-14 shadow-xl
               transform -translate-x-1/2 -translate-y-1/2
-              overflow-hidden
-              text-white"
+              overflow-hidden pt-15"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
             transition={{ duration: 0.3, ease: 'easeOut' }}
           >
-            
             {children}
             <button
               aria-label="Close modal"
               onClick={onClose}
-              className="absolute -top-2 md:-top-3 right-4 md:right-2 text-[var(--color-alt)] hover:text-[var(--color-light)] text-6xl leading-none select-none cursor-pointer"
+              className="absolute -top-2 md:-top-3 right-4 md:right-2 text-[var(--color-accent)] hover:text-[var(--color-light)] text-6xl leading-none select-none cursor-pointer"
             >
               ×
             </button>

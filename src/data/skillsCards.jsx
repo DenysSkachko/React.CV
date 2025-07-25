@@ -31,7 +31,7 @@ export const skillsData = {
     },
     {
       title: 'JavaScript',
-      desc: "JavaScript is what I use and study every day. I've completed a JS course, and even after that I realize there's still so much more to learn. This project is about 95% built with JavaScript. In past projects without frameworks, I used JS to implement tabs, modals, theme switchers, and burger menus. In my latest project (already using TypeScript), I worked with localStorage. In one of the older projects using jQuery, I implemented live site search functionality.",
+      desc: "JavaScript is what I use and study every day. I've completed a JS course, and even after that I realize there's still so much more to learn. This project is built almost entirely with JavaScript. In past projects without frameworks, I used JS to implement tabs, modals, theme switchers, and burger menus. In my latest project (already using TypeScript), I worked with localStorage. In one of the older projects using jQuery, I implemented live site search functionality.",
       points: [
         'DOM manipulation and events',
         'ES6+ features',
