@@ -85,6 +85,17 @@ export const skillsData = {
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
     },
     {
+      title: 'Next.js',
+      desc: 'Next.js is a powerful framework for building React applications with server-side rendering and static site generation. I have experience using Next.js in my projects, leveraging its features for better performance and SEO.',
+      points: [
+        'File-based routing for easy navigation',
+        'Server-side rendering (SSR) and static site generation (SSG)',
+        'API routes for backend functionality',
+        'Image optimization and automatic code splitting',
+      ],
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+    },
+    {
       title: 'PHP',
       desc: 'Aside from my early fragmented knowledge of HTML and CSS, PHP was the first technology I studied in depth. I used it to implement dynamic content on my own project. Now I can confidently work with Gutenberg blocks for WordPress, as well as develop custom plugins and themes.',
       points: [
@@ -94,17 +105,6 @@ export const skillsData = {
         'WordPress theme/plugin development basics',
       ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
-    },
-    {
-      title: 'WordPress',
-      desc: 'I have done a lot of work with WordPress, I also took a paid course on WordPress/PHP, where I made themes with minimal use of the admin panel, I used ACF and ACF Pro',
-      points: [
-        'Installing and configuring WordPress CMS',
-        'Creating and customizing themes with PHP, HTML, CSS',
-        'Working with plugins and hooks (actions/filters)',
-        'Using Advanced Custom Fields (ACF) for custom data',
-      ],
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg',
     },
   ],
   tools: [
@@ -151,6 +151,38 @@ export const skillsData = {
         'Aliasing and env variables',
         'Production builds and optimization',
       ],
+    },
+    {
+      title: 'WordPress',
+      desc: 'I have done a lot of work with WordPress, I also took a paid course on WordPress/PHP, where I made themes with minimal use of the admin panel, I used ACF and ACF Pro',
+      points: [
+        'Installing and configuring WordPress CMS',
+        'Creating and customizing themes with PHP, HTML, CSS',
+        'Working with plugins and hooks (actions/filters)',
+        'Using Advanced Custom Fields (ACF) for custom data',
+      ],
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg',
+    },
+    {
+      title: 'Vercel',
+      desc: ' Vercel is a platform for deploying web applications, particularly those built with Next.js. I have experience using Vercel for hosting my projects, taking advantage of its features for seamless deployment and scaling.',
+      points: [
+        'Easy deployment with Git integration',
+        'Automatic scaling and CDN',
+        'Environment variables management',
+      ],
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg',
+    },
+    {
+      title: 'Supabase',
+      desc: 'Supabase is an open-source Firebase alternative that provides a backend-as-a-service solution. I have experience using Supabase for authentication, database management, and real-time features in my projects.',
+      points: [
+        'Real-time database with PostgreSQL',
+        'Authentication and user management',
+        'Storage for file uploads',
+        'Serverless functions for custom logic',
+      ],
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
     },
   ],
   config: [
@@ -233,6 +265,16 @@ export const skillsData = {
       title: 'Framer Motion',
       desc: 'I included Framer Motion as an advanced addition; this portfolio contains animations implemented with it that GSAP cannot cover, such as slide transitions and tab section animations like the ones you’re viewing now. I would say I have a basic level of proficiency with this technology.',
       logo: 'https://cdn.worldvectorlogo.com/logos/framer-motion.svg',
+    },
+    {
+      title: 'Zod',
+      desc: 'Zod is a TypeScript-first schema declaration and validation library. I have experience using Zod for data validation in my projects, ensuring type safety and runtime checks.',
+      points: [
+        'Schema declaration and validation',
+        'Type inference for TypeScript',
+        'Custom error messages',
+      ],
+      logo: 'https://proxima-playground.vercel.app/_next/image?url=https%3A%2F%2Fyanfjrlafpkrvgsikbnz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Ftech%2F%2Fzod.webp&w=96&q=75',
     },
   ],
 };

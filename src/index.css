@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-  --color-accent: #d52027;
+  --color-accent: #e02c32;
   --color-dark: #141024;
   --color-light: #fff;
   --color-alt: #ffd369;
@@ -30,7 +30,7 @@
 }
 
 :root[data-theme='dark'] {
-  --color-accent: #ee262c;
+  --color-accent: #f82a31;
   --color-dark: #141024;
   --color-light: #fff;
   --color-alt: #ffd369;

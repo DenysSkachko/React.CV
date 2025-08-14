@@ -64,12 +64,14 @@ const Hero = () => {
           >
             Denys
           </span>
-          <span className="text-[var(--color-accent)] hover:scale-[1.1] hover:-rotate-[1deg] transition-transform duration-300">
-            Skachko
+          <span className="text-[var(--color-accent)] hover:scale-[1.1] hover:-rotate-[1deg] transition-transform duration-300 cursor-pointer">
+            <a href="https://proxima-playground.vercel.app/">Skachko</a>
           </span>
           <span className="relative group">
-            <span className="z-10 relative group-hover:text-[var(--color-dark)] transition-all duration-300">
-              / front-end
+            <span className="z-10 relative group-hover:text-[var(--color-dark)] transition-all duration-300 cursor-pointer">
+              <a href="https://drive.google.com/file/d/100a1o2ZswKbyJcQ1vBCrjQH29wwGcYYM/view?usp=drive_link">
+                / front-end
+              </a>
             </span>
             <span className="absolute inset-0 rounded bg-[var(--color-accent)] opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-300 -z-10" />
           </span>
