@@ -6,7 +6,7 @@ import AnimatedHeadline from '../../animation/AnimatedHeadline';
 const About = () => {
   return (
     <div
-      className="z-10 relative  pt-10 sm:pb-50 sm:pt-20 bg-[var(--color-accent)] text-white select-none shadow-xl min-h-screen p-4 overflow-hidden"
+      className="z-10 relative  pt-10 sm:pb-50 sm:pt-20 bg-gradient-to-r from-[var(--color-accent-hover)] to-[var(--color-accent)] text-[var(--color-light)] select-none shadow-xl min-h-screen p-4 overflow-hidden"
       aria-label="About Me Section"
     >
       <AnimatedHeadline text="About Me" className="mb-10 sm:mb-20" />

@@ -183,6 +183,16 @@ export const skillsData = {
         'Serverless functions for custom logic',
       ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
+    },{
+      title: 'Redux',
+      desc: 'Redux is a predictable state container for JavaScript applications. I have experience using Redux for state management in React applications, allowing for centralized and predictable state handling.',
+      points: [
+        'Centralized state management',
+        'Actions, reducers, and store',
+        'Middleware (e.g., Redux Thunk)',
+        'Integration with React (React-Redux)',
+      ],
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
     },
   ],
   config: [

@@ -26,7 +26,7 @@ const InfoCard = () => {
               key={id}
               ref={(el) => (cardRefs.current[i] = el)}
               className={`relative bg-[var(--color-dark)] rounded-3xl shadow-xl
-              transition-transform duration-300 hover:scale-105 hover:bg-[#372e5f]
+              transition-transform duration-300 hover:scale-105 hover:bg-[var(--color-dark-hover)]
               ${isButton ? 'cursor-pointer' : 'cursor-default'}`}
               role={isButton ? 'button' : undefined}
               tabIndex={isButton ? 0 : undefined}

@@ -42,7 +42,7 @@ const EducationCard = ({ title, index }) => {
           transform: flipped ? 'rotateY(180deg)' : 'none',
         }}
       >
-        <div className="hover:bg-[#372e5f] flip-front absolute w-full h-full backface-hidden rounded-3xl flex flex-col justify-center items-center p-6 text-center bg-[var(--color-dark)]">
+        <div className="hover:bg-[var(--color-dark-hover)] flip-front absolute w-full h-full backface-hidden rounded-3xl flex flex-col justify-center items-center p-6 text-center bg-[var(--color-dark)]">
           <BookOpen className="text-[var(--color-alt)] w-10 h-10 mb-3" />
           <h3 className="text-[var(--color-light)] font-extrabold text-2xl mb-2">
             {title}
