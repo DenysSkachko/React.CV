@@ -1,0 +1,62 @@
+[33mf0df6a2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to f0df6a2
+[33m848bd05[m HEAD@{1}: rebase (abort): returning to refs/heads/main
+[33m848bd05[m HEAD@{2}: rebase (abort): returning to refs/heads/main
+[33mbdde7d3[m HEAD@{3}: commit: delete dangeon video
+[33md005dd3[m HEAD@{4}: commit: add video-preview to dnd-project
+[33m8ac75c2[m HEAD@{5}: commit: add video-preview to dnd project
+[33m835a710[m HEAD@{6}: commit: Add GitHub Repo button on project page
+[33m55bdad1[m HEAD@{7}: commit: Update Project.data
+[33m4c1e1e0[m HEAD@{8}: commit: Update Header
+[33mf66056d[m HEAD@{9}: commit: Big update Project section, small fixes, back to original colors
+[33m412592e[m HEAD@{10}: commit (merge): Merge branch 'main' of github.com:DenysSkachko/React.CV
+[33mf0df6a2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{11}: commit: Colors fix
+[33m96b5a66[m HEAD@{12}: commit: update data
+[33m74e12c4[m HEAD@{13}: commit: softskills update
+[33m8b3535c[m HEAD@{14}: commit: new data
+[33m64fd16d[m HEAD@{15}: reset: moving to HEAD
+[33m64fd16d[m HEAD@{16}: commit: refactoring
+[33mcdff171[m HEAD@{17}: commit: update favicon
+[33m9093892[m HEAD@{18}: commit: favicon test
+[33m632a80a[m HEAD@{19}: commit: change cards logo
+[33mcb93ff8[m HEAD@{20}: commit: seo accebility
+[33mbd47884[m HEAD@{21}: commit: accebility fix 2
+[33m572760e[m HEAD@{22}: commit: accebility fix
+[33mec08117[m HEAD@{23}: commit: png convert webp
+[33mf1e2a5a[m HEAD@{24}: commit: add card, fix preloader
+[33mb5b60a2[m HEAD@{25}: commit: preloader done
+[33m1b83969[m HEAD@{26}: commit: delete footer anim
+[33m6868608[m HEAD@{27}: commit: fixed bags
+[33m0fc4a0c[m HEAD@{28}: commit: stop animating cards for next day
+[33m8eb2710[m HEAD@{29}: commit: finally fixed visual
+[33m2be2a57[m HEAD@{30}: commit: update hero
+[33me716842[m HEAD@{31}: reset: moving to HEAD
+[33me716842[m HEAD@{32}: commit: remove kills animation
+[33mafccee5[m HEAD@{33}: commit: fixed scroll, remove footer gsap
+[33mb60bbbe[m HEAD@{34}: commit: Added animation to Projects and Footer
+[33m523effb[m HEAD@{35}: commit: Projects animation text
+[33m57e688c[m HEAD@{36}: commit: New modal, Animation skills, Remove scrollbar
+[33m14088b9[m HEAD@{37}: commit: Update skills info, add component - socials, footer - done, some fixed
+[33m848bd05[m HEAD@{38}: checkout: moving from 0777ad34e06e66892017514265742578ee614d1c to main
+[33m0777ad3[m HEAD@{39}: pull origin gh-pages --rebase (start): checkout 0777ad34e06e66892017514265742578ee614d1c
+[33m848bd05[m HEAD@{40}: checkout: moving from gh-pages to main
+[33ma6185bc[m HEAD@{41}: checkout: moving from main to gh-pages
+[33m848bd05[m HEAD@{42}: commit: Update configs
+[33mc858a55[m HEAD@{43}: checkout: moving from gh-pages to main
+[33ma6185bc[m HEAD@{44}: pull origin gh-pages: Fast-forward
+[33m0065ded[m HEAD@{45}: checkout: moving from main to gh-pages
+[33mc858a55[m HEAD@{46}: reset: moving to HEAD
+[33mc858a55[m HEAD@{47}: commit: Trigger rebuild
+[33m61dacdc[m HEAD@{48}: checkout: moving from gh-pages to main
+[33m0065ded[m HEAD@{49}: checkout: moving from main to gh-pages
+[33m61dacdc[m HEAD@{50}: checkout: moving from gh-pages to main
+[33m0065ded[m HEAD@{51}: checkout: moving from main to gh-pages
+[33m61dacdc[m HEAD@{52}: checkout: moving from main to main
+[33m61dacdc[m HEAD@{53}: commit: Update light theme support, MediaQuery for others sections
+[33m81f7c3d[m HEAD@{54}: commit: MediaQuery for About-Section
+[33m510f2f9[m HEAD@{55}: commit: Fixed header pinned sections
+[33m6c85a32[m HEAD@{56}: commit: MediaQuery for pinned animation
+[33m9db1aa2[m HEAD@{57}: Branch: renamed refs/heads/main to refs/heads/main
+[33m9db1aa2[m HEAD@{59}: Branch: renamed refs/heads/main to refs/heads/main
+[33m9db1aa2[m HEAD@{61}: Branch: renamed refs/heads/main to refs/heads/main
+[33m9db1aa2[m HEAD@{63}: Branch: renamed refs/heads/master to refs/heads/main
+[33m9db1aa2[m HEAD@{65}: commit (initial): First Version CV
