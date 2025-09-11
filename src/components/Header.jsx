@@ -11,7 +11,7 @@ const links = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' } ,
+  { href: '#projects', label: 'Projects' },
 ];
 
 const Burger = ({ isOpen, toggle }) => (
@@ -85,15 +85,17 @@ const Header = () => {
   return (
     <header
       data-header
-      className="fixed top-0 left-0 w-full bg-[var(--color-accent)] z-[1000] text-[var(--color-light)] shadow-xl"
+      className="fixed top-0 left-0 w-full bg-[var(--color-accent)] z-[1000] text-[var(--color-light)] shadow-lg backdrop-blur-md"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Burger */}
         <Burger isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
+        {/* Navigation */}
         <nav
           ref={navRef}
           className={clsx(
-            'fixed top-0 left-0 w-full h-screen bg-[var(--color-accent)]  flex flex-col items-center justify-center gap-10 text-2xl font-semibold transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] md:flex md:flex-row md:h-auto md:py-0 md:px-0 md:bg-transparent md:text-xl md:gap-10 md:static md:translate-x-0 z-[1000]',
+            'fixed top-0 left-0 w-full h-screen bg-[var(--color-accent)] flex flex-col items-center justify-center gap-6 text-2xl font-semibold transition-transform duration-500 ease-in-out md:flex md:flex-row md:h-auto md:py-0 md:px-0 md:bg-transparent md:text-xl md:gap-8 md:static md:translate-x-0 z-[1000]',
             {
               'translate-x-0': isOpen,
               'translate-x-full md:translate-x-0': !isOpen,
@@ -109,26 +111,16 @@ const Header = () => {
                 jumpToSection(href);
               }}
               className={clsx(
-                'relative group px-2 py-1 transition-transform duration-300 uppercase',
+                'relative px-6 py-2 rounded-xl uppercase font-medium transition-all duration-300 text-[var(--color-light)]',
                 {
-                  'text-[var(--color-light)] scale-110 pointer-events-none':
+                  'bg-[var(--color-dark)] text-white scale-105 pointer-events-none':
                     activeSection === href,
-                  'hover:text-[var(--color-alt)] hover:scale-110':
+                  'hover:bg-[var(--color-light)] hover:text-[var(--color-dark)] hover:scale-105':
                     activeSection !== href,
                 }
               )}
             >
-              <span className="inline-block">{label}</span>
-              <span
-                className={clsx(
-                  'absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-alt)] transition-all duration-300 group-hover:w-full',
-                  activeSection === href &&
-                    'w-full h-[3px] bg-[var(--color-accent)]'
-                )}
-              />
-              {activeSection === href && (
-                <span className="absolute bottom-[-6px] left-0 w-full h-[2px] bg-gradient-to-r from-[#FFD369] via-[#D52027] to-[#FFD369] animate-underline-slide" />
-              )}
+              {label}
             </a>
           ))}
         </nav>

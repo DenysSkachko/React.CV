@@ -31,7 +31,7 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="z-11 relative  bg-cover bg-center min-h-screen px-6 flex flex-col items-center justify-center overflow-hidden bg-[var(--color-dark)]  text-[var(--color-light)] select-none shadow-xl"
+      className="z-11 relative  bg-cover bg-center min-h-screen px-6 flex flex-col items-center justify-center overflow-hidden bg-[var(--color-dark)]  text-[var(--color-light)] select-none shadow-2xl"
     >
       <div className="absolute w-[900px] h-[700px] top-[-200px] right-[-200px] z-0 blur-[160px] rounded-full mix-blend-lighten bg-[var(--color-accent)]/25" />
 

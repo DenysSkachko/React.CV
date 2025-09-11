@@ -11,7 +11,6 @@ const Skills = () => {
     <div
       className="h-full  py-10 sm:pb-50 sm:pt-20 z-12 bg-[var(--color-dark)] text-[#141024] shadow-2xl "
       aria-label="Skills Section"
-      style={{ boxShadow: '0 0px 100px 1px rgba(0, 0, 0, 0.50)' }}
     >
       <AnimatedHeadline
         text="Skills"
