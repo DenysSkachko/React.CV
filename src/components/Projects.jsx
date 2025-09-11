@@ -29,9 +29,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div
-      className="relative w-screen min-h-screen overflow-hidden bg-[var(--color-accent)] py-10 sm:py-20 shadow-2xl px-10"
-    >
+    <div className="relative w-screen min-h-screen overflow-hidden bg-[var(--color-accent)] py-10 sm:py-20 shadow-2xl px-10">
       <AnimatedHeadline
         text="Projects"
         className="mb-10 sm:mb-0 text-white max-w-6xl mx-auto"
@@ -110,16 +108,31 @@ const Projects = () => {
                   </div>
                 )}
 
-                {!showVideo && project.site && (
-                  <a
-                    href={project.site}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className=" absolute bottom-20 left-1/2 transform -translate-x-1/2 px-15 py-2 rounded-xl bg-[var(--color-accent)] text-[var(--color-light)] font-semibold shadow-lg hover:scale-105 transition-transform duration-300 z-10"
-                  >
-                    Visit My Project
-                  </a>
+                {!showVideo && (project.site || project.repo) && (
+                  <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
+                    {project.site && (
+                      <a
+                        href={project.site}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-6 py-2 rounded-xl bg-[var(--color-accent)] text-[var(--color-light)] font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+                      >
+                        Visit Project
+                      </a>
+                    )}
+                    {project.repo && (
+                      <a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-6 py-2 rounded-xl bg-[var(--color-dark)] text-[var(--color-light)] font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+                      >
+                        GitHub Repo
+                      </a>
+                    )}
+                  </div>
                 )}
               </motion.div>
             ) : null

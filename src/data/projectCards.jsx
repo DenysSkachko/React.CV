@@ -3,21 +3,14 @@ export const projects = [
     title: 'Wakanda & Sprite',
     image: './WakandaPreview.png',
     video: './WakandaVideo.mp4',
-    tech: [
-      'React',
-      'Tailwind CSS',
-      'JavaScript',
-      'Vite',
-      'GSAP',
-      'Git',
-      'Github',
-    ],
+    tech: ['React', 'Tailwind CSS', 'JavaScript', 'Vite', 'GSAP', 'Git', 'Github'],
   },
   {
     title: 'D&D Create',
     image: './DndPreview.png',
     video: './WakandaVideo.mp4',
     site: 'https://dnd-createhero.vercel.app/',
+    repo: 'https://github.com/DenysSkachko/DnD-CreateHeroWeb',
     tech: [
       'Next.js',
       'TypeScript',
@@ -30,7 +23,6 @@ export const projects = [
       'Vercel',
     ],
   },
-
   {
     title: 'Playground',
     description:
@@ -39,6 +31,7 @@ export const projects = [
     video: './playground.mp4',
     color: '#FFD369',
     site: 'https://proxima-playground.vercel.app/',
+    repo: 'https://github.com/DenysSkachko/NextJS-Playground',
     tech: [
       'HTML5',
       'Tailwind CSS',
@@ -59,8 +52,8 @@ export const projects = [
     image: './project5.webp',
     video: './project5.mp4',
     color: '#FFD369',
-
     site: 'https://denys-skachko.vercel.app/',
+    repo: 'https://github.com/DenysSkachko/React.CV',
     tech: [
       'Tailwind CSS',
       'JavaScript',
@@ -82,6 +75,7 @@ export const projects = [
     video: './project4.mp4',
     color: '#FFD369',
     site: 'https://planner-pet.vercel.app/',
+    repo: 'https://github.com/DenysSkachko/ReactPlanner',
     tech: [
       'HTML5',
       'Tailwind CSS',
@@ -95,7 +89,6 @@ export const projects = [
       'GitHub',
     ],
   },
-
   {
     title: 'FutureTech multi-page',
     description:
@@ -103,15 +96,6 @@ export const projects = [
     image: './project2.webp',
     video: './project2.mp4',
     color: '#FFD369',
-    tech: [
-      'HTML5',
-      'SASS',
-      'JavaScript',
-      'React',
-      'Vite',
-      'WordPress',
-      'PHP',
-      'GSAP',
-    ],
+    tech: ['HTML5', 'SASS', 'JavaScript', 'React', 'Vite', 'WordPress', 'PHP', 'GSAP'],
   },
 ];
