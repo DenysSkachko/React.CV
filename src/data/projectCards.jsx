@@ -1,13 +1,28 @@
 export const projects = [
   {
+    title: 'Wakanda & Sprite',
+    image: './WakandaPreview.png',
+    video: './WakandaVideo.mp4',
+    tech: [
+      'React',
+      'Tailwind CSS',
+      'JavaScript',
+      'Vite',
+      'GSAP',
+      'Git',
+      'Github',
+    ],
+  },
+  {
     title: 'My CV Page',
     description:
       'This was originally a test project built with React. Support for light and dark themes was added, using the Vite bundler. Animations are implemented with the framer-motion library. The layout is written using the Tailwind CSS utility framework.',
     image: './project5.webp',
     video: './project5.mp4',
     color: '#FFD369',
+
+    site: 'https://denys-skachko.vercel.app/',
     tech: [
-      'HTML5',
       'Tailwind CSS',
       'JavaScript',
       'React',
@@ -17,6 +32,7 @@ export const projects = [
       'Vercel',
       'npm',
       'GitHub',
+      'Git',
     ],
   },
   {
@@ -26,11 +42,11 @@ export const projects = [
     image: './playground.jpg',
     video: './playground.mp4',
     color: '#FFD369',
+    site: 'https://proxima-playground.vercel.app/',
     tech: [
       'HTML5',
       'Tailwind CSS',
       'TypeScript',
-      'React',
       'Next.js',
       'Framer Motion',
       'Zod',
@@ -40,7 +56,6 @@ export const projects = [
       'GitHub',
     ],
   },
-
   {
     title: "Teacher's Planner",
     description:
@@ -48,6 +63,7 @@ export const projects = [
     image: './project4.webp',
     video: './project4.mp4',
     color: '#FFD369',
+    site: 'https://planner-pet.vercel.app/',
     tech: [
       'HTML5',
       'Tailwind CSS',
@@ -81,11 +97,20 @@ export const projects = [
     ],
   },
   {
-    title: 'WhitePace Landing',
-    description:
-      'This is my first project that I worked on independently, outside of any formal training. I created a custom theme and integrated it into WordPress using PHP. The layout was built with plain HTML5 and native CSS. All the content on the page is dynamic, managed via Gutenberg blocks, which I also developed using PHP.A review system with ratings was added, implemented through Axios.',
-    image: './project1.webp',
-    color: '#FFD369',
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'Vite', 'WordPress', 'PHP', 'ACF'],
+    title: 'D&D Create',
+    image: './DndPreview.png',
+    video: './WakandaVideo.mp4',
+    site: 'https://dnd-createhero.vercel.app/',
+    tech: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'Supabase',
+      'Zustand',
+      'TanStack Query',
+      'Git',
+      'Github',
+      'Vercel',
+    ],
   },
 ];

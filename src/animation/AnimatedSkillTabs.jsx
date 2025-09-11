@@ -16,8 +16,8 @@ export const animateSkillTabs = (cardRefs, currentSkillLength) => {
       card,
       {
         opacity: 0,
-        y: 80,
-        rotateX: 45,
+        y: 0,
+        rotateX: 0,
         transformOrigin: 'center bottom',
         perspective: 600,
       },
@@ -26,7 +26,7 @@ export const animateSkillTabs = (cardRefs, currentSkillLength) => {
         y: 0,
         rotateX: 0,
         duration: 1.4,
-        ease: 'bounce.out',
+        ease: 'elastic.out',
         delay: i * 0.12,
         scrollTrigger: {
           trigger: card,

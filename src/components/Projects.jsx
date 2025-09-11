@@ -1,14 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import Modal from './Modal';
 import AnimatedHeadline from '../animation/AnimatedHeadline';
 import { projects } from '../data/projectCards';
 import { animateProjects } from '../animation/AnimatedProjects';
+import { getTechData } from '../hooks/getTechData';
 
 const Projects = () => {
   const [current, setCurrent] = useState(0);
   const length = projects.length;
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   const slideRefs = useRef([]);
   const titleRefs = useRef([]);
@@ -16,10 +16,12 @@ const Projects = () => {
 
   const nextProject = () => {
     setCurrent((prev) => (prev === length - 1 ? 0 : prev + 1));
+    setShowVideo(false);
   };
 
   const prevProject = () => {
     setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1));
+    setShowVideo(false);
   };
 
   useEffect(() => {
@@ -47,35 +49,79 @@ const Projects = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.6, ease: 'easeInOut' }}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[600px] sm:h-[700px] shadow-2xl rounded-2xl overflow-hidden flex items-center justify-center text-center"
-                style={{
-                  boxShadow: '0 40px 100px rgba(0, 0, 0, 0.5)',
-                  backgroundImage: `url(${project.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[600px] sm:h-[700px] shadow-2xl rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center cursor-pointer bg-black"
+                onClick={() => setShowVideo((prev) => !prev)}
               >
-                <div
-                  onClick={() => setIsModalOpen(true)}
-                  className="relative z-10 p-8 xl:p-14 bg-[var(--color-light)] rounded-2xl shadow-2xl max-w-[90%] mx-auto cursor-pointer"
-                  style={{
-                    boxShadow: 'inset 0 4px 20px rgba(0, 0, 0, 0.4)',
-                  }}
-                >
-                  <motion.h2
-                    ref={(el) => (titleRefs.current[index] = el)}
-                    className="text-[var(--color-dark)]  text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-5 hover:text-[var(--color-accent)]"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      ease: 'easeInOut',
-                      delay: 0.2,
+                {showVideo && project.video ? (
+                  project.video.includes('youtube') ? (
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={project.video}
+                      title={project.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <video
+                      src={project.video}
+                      controls
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  )
+                ) : (
+                  <div
+                    className="w-full h-full relative"
+                    style={{
+                      backgroundImage: `url(${project.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
                     }}
                   >
-                    {project.title}
-                  </motion.h2>
-                </div>
+                    <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-t from-[var(--color-dark)]/90 to-transparent pointer-events-none" />
+
+                    <div
+                      className="absolute bottom-0 left-0 w-full flex justify-center p-2 flex-wrap gap-2"
+                      style={{
+                        flexDirection: 'row',
+                        flexWrap: 'wrap-reverse',
+                        alignContent: 'flex-end',
+                      }}
+                    >
+                      {getTechData(project.tech).map((item, i) => (
+                        <span
+                          key={i}
+                          className="flex w-fit items-center gap-1 px-5 py-3 text-sm rounded-xl  text-[var(--color-light)] bg-[var(--color-light)] hover:scale-110 transition-all duration-300 "
+                        >
+                          {item.logo && (
+                            <img
+                              src={item.logo}
+                              alt={item.title}
+                              className="w-8 h-8 object-contain"
+                            />
+                          )}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {!showVideo && project.site && (
+                  <a
+                    href={project.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className=" absolute bottom-20 left-1/2 transform -translate-x-1/2 px-15 py-2 rounded-xl bg-[var(--color-accent)] text-[var(--color-light)] font-semibold shadow-lg hover:scale-105 transition-transform duration-300 z-10"
+                  >
+                    Visit My Project
+                  </a>
+                )}
               </motion.div>
             ) : null
           )}
@@ -86,7 +132,10 @@ const Projects = () => {
         {projects.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrent(index)}
+            onClick={() => {
+              setCurrent(index);
+              setShowVideo(false);
+            }}
             className={`w-3 h-3 rounded-full border transition-all duration-300 ${
               current === index
                 ? 'bg-[var(--color-dark)] border-[var(--color-dark)] scale-125'
@@ -115,48 +164,6 @@ const Projects = () => {
           ›
         </span>
       </div>
-
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-  <div className="max-h-[80vh] overflow-y-auto px-4">
-    <h3 className="text-2xl font-bold mb-4 text-[var(--color-light)]">
-      {projects[current].title}
-    </h3>
-    <p className="text-lg text-[var(--color-light)]">
-      {projects[current].description}
-    </p>
-    <div className="mt-6 flex flex-wrap gap-2">
-      {projects[current].tech?.map((techName, index) => (
-        <button
-          key={index}
-          className="text-sm px-3 py-1 rounded-2xl border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-black transition"
-          type="button"
-        >
-          {techName}
-        </button>
-      ))}
-    </div>
-    {projects[current].video ? (
-      <video
-        src={projects[current].video}
-        controls
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="mt-6 rounded-lg"
-      />
-    ) : (
-      <img
-        src={projects[current].image}
-        alt={projects[current].title}
-        className="mt-6 rounded-lg"
-      />
-    )}
-
-    
-  </div>
-</Modal>
-
     </div>
   );
 };

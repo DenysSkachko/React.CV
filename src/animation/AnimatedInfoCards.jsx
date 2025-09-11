@@ -28,7 +28,7 @@ export const animateInfoCards = (cardRefs) => {
         scrollTrigger: {
           trigger: outerCard,
           start: 'top 90%',
-          toggleActions: 'play reset play reset',
+          toggleActions: 'play none none none',
           invalidateOnRefresh: true,
           refreshPriority: 1,
         },

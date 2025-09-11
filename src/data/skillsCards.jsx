@@ -183,7 +183,8 @@ export const skillsData = {
         'Serverless functions for custom logic',
       ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
-    },{
+    },
+    {
       title: 'Redux',
       desc: 'Redux is a predictable state container for JavaScript applications. I have experience using Redux for state management in React applications, allowing for centralized and predictable state handling.',
       points: [
@@ -285,6 +286,28 @@ export const skillsData = {
         'Custom error messages',
       ],
       logo: 'https://proxima-playground.vercel.app/_next/image?url=https%3A%2F%2Fyanfjrlafpkrvgsikbnz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Ftech%2F%2Fzod.webp&w=96&q=75',
+    },
+    {
+      title: 'TanStack Query',
+      desc: 'TanStack Query (React Query) helps manage server state, caching, and async data fetching in React apps efficiently.',
+      points: [
+        'Data fetching and caching',
+        'Automatic background refetching',
+        'Optimistic updates',
+        'Integration with React hooks',
+      ],
+      logo: 'https://images.seeklogo.com/logo-png/43/1/react-query-logo-png_seeklogo-435661.png'
+    },
+    {
+      title: 'Zustand',
+      desc: 'Zustand is a small, fast, and scalable state management library for React, providing a minimal and flexible API.',
+      points: [
+        'Global state management without boilerplate',
+        'Easy integration with React hooks',
+        'Supports middleware and persistence',
+        'Lightweight and performant',
+      ],
+      logo: 'https://github.com/pmndrs/zustand/blob/main/examples/demo/public/logo512.png?raw=true',
     },
   ],
 };
