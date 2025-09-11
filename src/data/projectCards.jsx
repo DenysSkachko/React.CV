@@ -14,27 +14,23 @@ export const projects = [
     ],
   },
   {
-    title: 'My CV Page',
-    description:
-      'This was originally a test project built with React. Support for light and dark themes was added, using the Vite bundler. Animations are implemented with the framer-motion library. The layout is written using the Tailwind CSS utility framework.',
-    image: './project5.webp',
-    video: './project5.mp4',
-    color: '#FFD369',
-
-    site: 'https://denys-skachko.vercel.app/',
+    title: 'D&D Create',
+    image: './DndPreview.png',
+    video: './WakandaVideo.mp4',
+    site: 'https://dnd-createhero.vercel.app/',
     tech: [
+      'Next.js',
+      'TypeScript',
       'Tailwind CSS',
-      'JavaScript',
-      'React',
-      'Vite',
-      'Framer Motion',
-      'GSAP',
-      'Vercel',
-      'npm',
-      'GitHub',
+      'Supabase',
+      'Zustand',
+      'TanStack Query',
       'Git',
+      'Github',
+      'Vercel',
     ],
   },
+
   {
     title: 'Playground',
     description:
@@ -54,6 +50,28 @@ export const projects = [
       'Vercel',
       'npm',
       'GitHub',
+    ],
+  },
+  {
+    title: 'My CV Page',
+    description:
+      'This was originally a test project built with React. Support for light and dark themes was added, using the Vite bundler. Animations are implemented with the framer-motion library. The layout is written using the Tailwind CSS utility framework.',
+    image: './project5.webp',
+    video: './project5.mp4',
+    color: '#FFD369',
+
+    site: 'https://denys-skachko.vercel.app/',
+    tech: [
+      'Tailwind CSS',
+      'JavaScript',
+      'React',
+      'Vite',
+      'Framer Motion',
+      'GSAP',
+      'Vercel',
+      'npm',
+      'GitHub',
+      'Git',
     ],
   },
   {
@@ -94,23 +112,6 @@ export const projects = [
       'WordPress',
       'PHP',
       'GSAP',
-    ],
-  },
-  {
-    title: 'D&D Create',
-    image: './DndPreview.png',
-    video: './WakandaVideo.mp4',
-    site: 'https://dnd-createhero.vercel.app/',
-    tech: [
-      'Next.js',
-      'TypeScript',
-      'Tailwind CSS',
-      'Supabase',
-      'Zustand',
-      'TanStack Query',
-      'Git',
-      'Github',
-      'Vercel',
     ],
   },
 ];
