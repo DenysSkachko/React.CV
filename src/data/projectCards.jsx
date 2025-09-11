@@ -9,7 +9,7 @@ export const projects = [
     title: 'D&D Create',
     image: './DndPreview.png',
     video: 'https://www.youtube.com/embed/w5DDEiC17XI?si=AxfIIl8owu64P_d-',
-    site: 'https://dnd-createhero.vercel.app/',
+    site: 'https://dnd-hub.vercel.app/',
     repo: 'https://github.com/DenysSkachko/DnD-CreateHeroWeb',
     tech: [
       'Next.js',
