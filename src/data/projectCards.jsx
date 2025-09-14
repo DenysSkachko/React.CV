@@ -3,7 +3,15 @@ export const projects = [
     title: 'Wakanda & Sprite',
     image: './WakandaPreview.png',
     video: './WakandaVideo.mp4',
-    tech: ['React', 'Tailwind CSS', 'JavaScript', 'Vite', 'GSAP', 'Git', 'Github'],
+    tech: [
+      'React',
+      'Tailwind CSS',
+      'JavaScript',
+      'Vite',
+      'GSAP',
+      'Git',
+      'Github',
+    ],
   },
   {
     title: 'D&D Create',
@@ -90,12 +98,33 @@ export const projects = [
     ],
   },
   {
+    title: 'Metaverse Madness',
+    image: './MetaversePreview.png',
+    tech: [
+      'HTML5',
+      'React',
+      'Tailwind CSS',
+      'JavaScript',
+      'Vite',
+      'Framer Motion',
+    ],
+  },
+  {
     title: 'FutureTech multi-page',
     description:
       'This project is more complex — a multi-page site deployed on WordPress, with all blocks dynamic through Gutenberg using PHP and JavaScript. The layout is built using the SCSS preprocessor, with a modular structure, mixins, and functions for responsive design, avoiding fixed pixel values. The site is animated using the GreenSock Animation Platform (GSAP). It includes custom archive pages and single post templates. Additionally, a lot of functionality is implemented using JavaScript.',
     image: './project2.webp',
     video: './project2.mp4',
     color: '#FFD369',
-    tech: ['HTML5', 'SASS', 'JavaScript', 'React', 'Vite', 'WordPress', 'PHP', 'GSAP'],
+    tech: [
+      'HTML5',
+      'SASS',
+      'JavaScript',
+      'React',
+      'Vite',
+      'WordPress',
+      'PHP',
+      'GSAP',
+    ],
   },
 ];
