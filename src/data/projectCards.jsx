@@ -100,6 +100,8 @@ export const projects = [
   {
     title: 'Metaverse Madness',
     image: './MetaversePreview.png',
+    site: 'https://proxima-madversus.netlify.app/',
+    repo: 'https://github.com/DenysSkachko/Metaverse-Madness',
     tech: [
       'HTML5',
       'React',
