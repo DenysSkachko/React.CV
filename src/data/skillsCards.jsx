@@ -2,6 +2,7 @@ export const tabs = [
   { id: 'main', label: 'Main' },
   { id: 'tools', label: 'Tools' },
   { id: 'config', label: 'Config' },
+  { id: 'libs', label: 'Libs' },
   { id: 'other', label: 'Others' },
 ];
 
@@ -184,17 +185,7 @@ export const skillsData = {
       ],
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
     },
-    {
-      title: 'Redux',
-      desc: 'Redux is a predictable state container for JavaScript applications. I have experience using Redux for state management in React applications, allowing for centralized and predictable state handling.',
-      points: [
-        'Centralized state management',
-        'Actions, reducers, and store',
-        'Middleware (e.g., Redux Thunk)',
-        'Integration with React (React-Redux)',
-      ],
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
-    },
+    
   ],
   config: [
     {
@@ -235,30 +226,17 @@ export const skillsData = {
     },
   ],
 
-  other: [
+  libs: [
     {
-      title: 'Photoshop',
-      desc: 'I have been working with Photoshop for over 10 years.',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
+      title: 'Redux',
+      desc: 'Redux is a predictable state container for JavaScript applications. I have experience using Redux for state management in React applications, allowing for centralized and predictable state handling.',
       points: [
-        'UI mockup design and layout',
-        'Layer management & smart objects',
-        'Exporting assets for web (PNG, SVG)',
-        'Working with typography & guides',
-        'Basic photo editing and retouching',
+        'Centralized state management',
+        'Actions, reducers, and store',
+        'Middleware (e.g., Redux Thunk)',
+        'Integration with React (React-Redux)',
       ],
-    },
-    {
-      title: 'ACF',
-      desc: 'I have practical experience with both the standard and PRO versions of ACF for creating dependencies in WordPress. It’s a useful tool, even though I prefer using native PHP for some tasks.',
-      logo: 'https://cdn.brandfetch.io/idyxGctRjG/w/256/h/256/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1751030685548',
-      points: [
-        'Creating custom field groups for posts/pages',
-        'Flexible content & repeaters',
-        'Using `get_field()` and `the_field()` in templates',
-        'Conditional logic and UI customization',
-        'Connecting ACF with custom post types (CPT)',
-      ],
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
     },
     {
       title: 'GSAP',
@@ -296,7 +274,7 @@ export const skillsData = {
         'Optimistic updates',
         'Integration with React hooks',
       ],
-      logo: 'https://images.seeklogo.com/logo-png/43/1/react-query-logo-png_seeklogo-435661.png'
+      logo: 'https://images.seeklogo.com/logo-png/43/1/react-query-logo-png_seeklogo-435661.png',
     },
     {
       title: 'Zustand',
@@ -309,5 +287,65 @@ export const skillsData = {
       ],
       logo: 'https://github.com/pmndrs/zustand/blob/main/examples/demo/public/logo512.png?raw=true',
     },
+  ],
+
+  other: [
+    {
+      title: 'Photoshop',
+      desc: 'I have been working with Photoshop for over 10 years.',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
+      points: [
+        'UI mockup design and layout',
+        'Layer management & smart objects',
+        'Exporting assets for web (PNG, SVG)',
+        'Working with typography & guides',
+        'Basic photo editing and retouching',
+      ],
+    },
+    {
+      title: 'ACF',
+      desc: 'I have practical experience with both the standard and PRO versions of ACF for creating dependencies in WordPress. It’s a useful tool, even though I prefer using native PHP for some tasks.',
+      logo: 'https://cdn.brandfetch.io/idyxGctRjG/w/256/h/256/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1751030685548',
+      points: [
+        'Creating custom field groups for posts/pages',
+        'Flexible content & repeaters',
+        'Using `get_field()` and `the_field()` in templates',
+        'Conditional logic and UI customization',
+        'Connecting ACF with custom post types (CPT)',
+      ],
+    },
+
+    {
+      title: 'Clerk',
+      desc: 'Clerk is a user management solution for React applications, providing authentication, user profiles, and more.',
+      points: [
+        'Easy integration with React apps',
+        'Pre-built UI components for user management',
+        'Supports various authentication methods',
+        'Customizable and extensible',
+      ],
+      logo: 'https://cdn.brandfetch.io/idGrtLvNcI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1751901563714',
+    },
+    {
+      title: 'UploadThing',
+      desc: 'UploadThing is a file upload solution for React applications, providing easy integration and management of file uploads.',
+      points: [
+        'Simple API for file uploads',
+        'Supports various file types and sizes',
+        'Customizable upload components',
+      ],
+      logo: '/uploadthing.svg',
+    },
+    {
+      title: 'Mongoose',
+      logo: '/mongoose.svg',
+      desc: 'Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js, providing a schema-based solution to model application data.',
+      points: [
+        'Schema definition and validation',
+        'Middleware support',
+        'Built-in type casting',
+        'Query building and population',
+      ],
+    }
   ],
 };

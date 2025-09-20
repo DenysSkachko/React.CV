@@ -32,6 +32,21 @@ export const projects = [
     ],
   },
   {
+    title: 'Proxima Threads',
+    image: './ThreadsPreview.png',
+    site: 'https://proxima-threads.vercel.app/',
+    repo: 'https://github.com/DenysSkachko/Next-Threads',
+    tech: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'Zod',
+      'Git',
+      'Github',
+      'Vercel',
+    ],
+  },
+  {
     title: 'Playground',
     description:
       'Next.js project with a playground for testing various features. Fullstack project with a backend built on Supabase. The frontend is developed using Next.js, TypeScript, and Tailwind CSS. The project includes 20+ themes, interactive elements, music, game. Authentication is implemented using Supabase, and the project is deployed on Vercel. Also REALTIME CHAT.',
