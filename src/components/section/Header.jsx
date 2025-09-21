@@ -65,8 +65,8 @@ const Header = () => {
 
   return (
     <header className="fixed top-3 left-1/2 -translate-x-1/2 max-w-5xl w-full bg-transparent border border-dark-hover z-[1000] text-light rounded-md shadow-lg backdrop-blur-lg">
-      <div className="absolute inset-0 bg-gradient-to-r from-dark via-transparent to-dark/10 backdrop-blur-lg rounded-md pointer-events-none"></div>
-      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-center">
+      <div className="absolute inset-0 bg-gradient-to-r from-dark via-transparent to-dark backdrop-blur-lg rounded-md pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-start md:justify-center">
         <Logo />
         <HeaderSocial />
 
@@ -90,17 +90,17 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="relative">
+        <div className="relative justify-start">
           <button
             aria-label="Toggle Menu"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[var(--color-light)] z-[1001] text-3xl p-2"
+            className="md:hidden text-light z-[1001] text-3xl p-2"
           >
             {isOpen ? <HiX /> : <HiMenu />}
           </button>
 
           {isOpen && (
-            <div className="absolute right-0 mt-6 w-40 bg-dark/80 border border-dark-hover rounded-lg shadow-lg flex flex-col gap-2 p-3 z-[1000] backdrop-blur-md">
+            <div className="absolute left-0 mt-6 w-40 bg-dark/80 border border-dark-hover rounded-lg shadow-lg flex md:hidden flex-col gap-2 p-3 z-[1000] backdrop-blur-md">
               {links.map(({ href, label }) => (
                 <a
                   key={href}
@@ -110,7 +110,7 @@ const Header = () => {
                     jumpToSection(href)
                   }}
                   className={clsx('px-3 py-2 rounded-md font-medium transition-colors hover:bg-dark-hover ', {
-                    'bg-dark-hover pointer-events-none': activeSection === href,
+                    'bg-accent pointer-events-none': activeSection === href,
                   })}
                 >
                   {label}

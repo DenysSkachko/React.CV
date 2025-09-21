@@ -10,6 +10,10 @@ const Skills = () => {
     <div
       className="h-full min-h-screen py-10 sm:pb-50 sm:pt-20 z-12 bg-dark text-dark  shadow-2xl "
       aria-label="Skills Section"
+      
+      style={{
+        backgroundImage: "url('/hero-back.png')",
+      }}
     >
       <AnimatedHeadline
         text="Skills"

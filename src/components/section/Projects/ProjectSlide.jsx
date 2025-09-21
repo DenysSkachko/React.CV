@@ -3,7 +3,7 @@ import { TechList } from './TechList'
 
 export const ProjectSlide = ({ project, showVideo, onToggleVideo }) => (
   <div
-    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[600px] sm:h-[700px] shadow-2xl rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center cursor-pointer bg-dark"
+    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[500px] sm:h-[600px] shadow-2xl rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center cursor-pointer bg-dark"
     onClick={onToggleVideo}
   >
     {showVideo && project.video ? (

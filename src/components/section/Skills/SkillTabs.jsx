@@ -10,7 +10,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
 
   const expandedRef = useRef(null)
 
-  const handleCardClick = index => {
+  const handleCardClick = (index) => {
     setActiveIndex(index)
   }
 
@@ -42,7 +42,7 @@ const SkillTabs = React.forwardRef((props, ref) => {
     <section
       ref={ref}
       aria-labelledby="skills-tabs-heading"
-      className="z-13 bg-dark text-[#141024] px-6 py-6 sm:px-12 lg:px-12"
+      className="z-13 text-[#141024] px-6 py-6 sm:px-12 lg:px-12"
     >
       <h2 id="skills-tabs-heading" className="sr-only">
         Навыки — категории и детали
@@ -71,9 +71,11 @@ const SkillTabs = React.forwardRef((props, ref) => {
               }}
               className={`
                 rounded-lg px-4 py-3 font-semibold transition-colors duration-300 focus:outline-none focus:ring cursor-pointer
-                ${activeTab === id
-                  ? 'bg-accent text-dark shadow-lg'
-                  : 'bg-dark-hover text-light hover:bg-[#3c3c54] hover:text-white'}
+                ${
+                  activeTab === id
+                    ? 'bg-accent text-dark shadow-lg'
+                    : 'bg-dark-hover text-light hover:bg-[#3c3c54] hover:text-white'
+                }
               `}
               style={{ minWidth: 120, textAlign: 'center' }}
               type="button"

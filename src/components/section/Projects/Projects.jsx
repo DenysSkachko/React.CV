@@ -38,7 +38,7 @@ const Projects = () => {
     <div className="relative w-screen min-h-screen overflow-hidden bg-accent py-10 sm:py-20 shadow-2xl px-10">
       <AnimatedHeadline text="Projects" className="mb-10 sm:mb-0 text-white max-w-6xl mx-auto" />
 
-      <div className="relative max-w-[1100px] w-full mx-auto px-6 min-h-[600px] sm:min-h-[800px] flex items-center justify-center">
+      <div className="relative max-w-[1000px] w-full mx-auto px-6 min-h-[600px] sm:min-h-[700px] flex items-center justify-center">
         <AnimatePresence custom={direction} mode="wait">
           {projects.map((project, index) =>
             index === current ? (
@@ -50,7 +50,7 @@ const Projects = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[600px] sm:h-[700px]"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full"
               >
                 <ProjectSlide
                   project={project}

@@ -31,7 +31,7 @@ function App() {
     if (aboutSection) {
       ScrollTrigger.create({
         trigger: aboutSection,
-        start: 'bottom bottom',
+        start: 'top top',
         pin: true,
         pinSpacing: false,
         id: 'pin-about',
@@ -41,7 +41,7 @@ function App() {
     if (skillsSection) {
       ScrollTrigger.create({
         trigger: skillsSection,
-        start: 'bottom bottom',
+        start: 'top top',
         pin: true,
         pinSpacing: false,
         id: 'pin-skills',

@@ -5,9 +5,9 @@ import { BsTwitter } from 'react-icons/bs'
 const socials = [
   { Icon: FaInstagram, url: 'https://instagram.com/denys.skachko', color: '#E4405F' },
   { Icon: FaTelegramPlane, url: 'https://t.me/stormstyle', color: '#26A5E4' },
-  { Icon: FaGithub, url: 'https://github.com/DenysSkachko', color: '#181717' },
+  { Icon: FaGithub, url: 'https://github.com/DenysSkachko', color: '#fff' },
   { Icon: FaLinkedin, url: 'https://www.linkedin.com/in/denys-skachko-9ba871374/', color: '#0A66C2' },
-  { Icon: FaYoutube, url: 'https://youtube.com/@denys', color: '#FF0000' },
+  { Icon: FaYoutube, url: 'https://www.youtube.com/@DenysSkachko', color: '#FF0000' },
   { Icon: SiGmail, url: 'https://mail.google.com/mail/?view=cm&to=denya.skachko@gmail.com', color: '#EA4335' },
   { Icon: BsTwitter, url: 'https://x.com/denys_skachko', color: '#1DA1F2' },
 ]
@@ -24,7 +24,7 @@ const SocialLinks = ({ direction }) => {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-4xl transition-transform duration-300 hover:scale-150 bg-light p-2 rounded-full"
+          className="text-4xl transition-transform duration-300 hover:scale-150"
           aria-label={`Link to ${url}`}
           style={{ color }}
         >

@@ -13,7 +13,7 @@ const EducationCard = ({ education }) => {
 
   return (
     <div
-      className={`edu-card visible relative w-full max-w-[470px] h-[280px] rounded-2xl shadow-2xl cursor-pointer transition-all duration-300 ${
+      className={`edu-card visible relative w-full  h-[280px] rounded-2xl shadow-2xl cursor-pointer transition-all duration-300 ${
         flipped ? 'flipped' : ''
       }`}
       onClick={toggleFlip}
