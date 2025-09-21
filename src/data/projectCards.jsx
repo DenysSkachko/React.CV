@@ -17,7 +17,7 @@ export const projects = [
   {
     title: 'Playground',
     image: './playground.jpg',
-    video: './playground.mp4',
+    video: 'https://www.youtube.com/embed/d1Pdot0wTQg?si=64P6CXnGNVegSO4p',
     site: 'https://proxima-playground.vercel.app/',
     repo: 'https://github.com/DenysSkachko/NextJS-Playground',
     tech: [
