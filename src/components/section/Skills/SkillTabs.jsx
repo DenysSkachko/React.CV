@@ -58,7 +58,7 @@ const SkillTabs = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+              className="grid grid-cols-2 md:grid-cols-3 gap-8"
             >
               {currentSkill.map(({ title, logo }) => (
                 <motion.div

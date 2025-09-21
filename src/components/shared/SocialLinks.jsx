@@ -15,7 +15,7 @@ const socials = [
 const SocialLinks = ({ direction }) => {
   return (
     <div
-      className={`flex flex-wrap max-w-[200px] justify-center sm:max-w-full gap-6 mt-4 ${direction === 'col' && 'flex-col'}`}
+      className={`flex flex-wrap max-w-[300px] mx-auto justify-center items-center sm:max-w-full gap-6 mt-4 ${direction === 'col' && 'flex-col'}`}
       aria-label="Social media links"
     >
       {socials.map(({ Icon, url, color }, i) => (
@@ -24,9 +24,9 @@ const SocialLinks = ({ direction }) => {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-4xl transition-transform duration-300 hover:scale-150"
+          className="text-4xl transition-transform duration-300 hover:scale-150 text-light"
           aria-label={`Link to ${url}`}
-          style={{ color }}
+          /* style={{ color }} */
         >
           <Icon />
         </a>
