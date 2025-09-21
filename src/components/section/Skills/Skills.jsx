@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, forwardRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import AnimatedHeadline from '../../animation/AnimatedHeadline';
+import AnimatedHeadline from '../../../animation/AnimatedHeadline';
 import SkillTabs from './SkillTabs';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Skills = () => {
   return (
     <div
-      className="h-full  py-10 sm:pb-50 sm:pt-20 z-12 bg-[var(--color-dark)] text-[#141024] shadow-2xl "
+      className="h-full min-h-screen py-10 sm:pb-50 sm:pt-20 z-12 bg-dark text-dark  shadow-2xl "
       aria-label="Skills Section"
     >
       <AnimatedHeadline

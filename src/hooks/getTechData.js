@@ -6,6 +6,7 @@ export function getTechData(techList) {
     ...skillsData.tools,
     ...skillsData.config,
     ...skillsData.other,
+    ...skillsData.libs,
   ]
 
   return techList.map((tech) => {

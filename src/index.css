@@ -1,5 +1,28 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-accent: #e02c32;
+  --color-dark: #141024;
+  --color-light: #fff;
+  --color-alt: #ffd369;
+  --color-accent-hover: #b8181c;
+  --color-dark-hover: #372e5f;
+  --color-light-hover: #e6e6e6;
+}
+
+@font-face {
+  font-family: 'MickeyMouse';
+  src: url('/MickeyMouse.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer utilities {
+  .font-mickey {
+    font-family: 'MickeyMouse', cursive;
+  }
+}
+
 :root {
   --color-accent: #e02c32;
   --color-dark: #141024;
@@ -7,6 +30,7 @@
   --color-alt: #ffd369;
   --color-accent-hover: #b8181c;
   --color-dark-hover: #372e5f;
+  --color-light-hover: #e6e6e6;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -22,7 +46,7 @@
   --color-accent: #ff4d4d;
   --color-accent-hover: #cc3a3a;
 
-  --color-dark: #FFE6E1;
+  --color-dark: #ffe6e1;
   --color-dark-hover: #c0c0c0;
 
   --color-light: #141024;
@@ -61,6 +85,14 @@ html {
 ::selection {
   background: var(--color-accent);
   color: var(--color-dark);
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
 }
 
 ul li a::after {

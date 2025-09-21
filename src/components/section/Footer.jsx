@@ -1,5 +1,5 @@
-import React from 'react';
-import SocialLinks from './SocialLinks';
+import React from 'react'
+import SocialLinks from '../shared/SocialLinks'
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
         <SocialLinks />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

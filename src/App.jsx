@@ -4,10 +4,8 @@ import {
   Hero,
   About,
   Skills,
-  ThemeToggle,
   Footer,
   Projects,
-  Reviews,
 } from './components/index';
 import './index.css';
 import gsap from 'gsap';
@@ -72,10 +70,10 @@ function App() {
 
   return (
     <>
-      {!isMobile && <Preloader />}
+      {!isMobile && <Preloader />} 
 
-      <div className="min-h-screen flex flex-col relative">
-        {/* <ThemeToggle /> */}
+      <div className="min-h-screen flex flex-col relative text-light">
+        
         <Header />
         <main className="flex-1">
           <Hero />

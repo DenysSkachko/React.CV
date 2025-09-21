@@ -1,4 +1,4 @@
-import Modal from './Modal';
+import Modal from './Modal'
 
 const SoftSkillsModal = ({ isOpen, onClose, skills }) => {
   return (
@@ -16,7 +16,7 @@ const SoftSkillsModal = ({ isOpen, onClose, skills }) => {
         ))}
       </div>
     </Modal>
-  );
-};
+  )
+}
 
-export default SoftSkillsModal;
+export default SoftSkillsModal
