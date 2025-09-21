@@ -1,19 +1,21 @@
-import SocialLinks from '../../shared/SocialLinks'
 import { CV } from '../../shared/CV'
 import GradientHero from './GradientHero'
+import SparksCanvas from './SparksCanvas'
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="z-11 relative bg-fixed bg-cover bg-center min-h-screen px-6  flex flex-col items-center justify-center overflow-hidden select-none"
+      className="z-11 relative bg-fixed bg-cover bg-center min-h-screen px-6  flex items-center justify-center overflow-hidden select-none"
       style={{
         backgroundImage: "url('/hero-back.png')",
       }}
     >
       <GradientHero />
 
-      <div className="relative z-10 max-w-5xl w-full flex flex-col items-center text-center ">
+      <SparksCanvas />
+
+      <div className="relative z-10 max-w-4xl w-full flex flex-col items-center text-center ">
         <div className="flex flex-col flex-wrap justify-center items-center gap-6">
           <div className="flex flex-col items-center">
             <h1 className="animate-float-slow z-10 text-5xl md:text-[4.3rem] font-bold hover:scale-[1.1] hover:-rotate-[1deg] transition-all duration-300">
@@ -32,6 +34,8 @@ const Hero = () => {
           <CV />
         </div>
       </div>
+
+      <div className="h-full w-10 bg-light" />
     </section>
   )
 }

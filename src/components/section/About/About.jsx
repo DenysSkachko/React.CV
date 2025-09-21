@@ -7,7 +7,7 @@ import { infoData, educationData } from '../../../data/personData'
 const About = () => {
   return (
     <div
-      className="z-10 bg-fixed relative  pt-10 sm:pb-50 sm:pt-20 bg-accent text-light select-none shadow-2xl min-h-screen p-4 overflow-hidden"
+      className="z-10 bg-fixed relative  pt-10 sm:pb-20 sm:pt-20 bg-accent text-light select-none shadow-2xl min-h-screen p-4 overflow-hidden"
       aria-label="About Me Section"
     >
       <AnimatedHeadline text="About Me" className="mb-10" />
