@@ -2,9 +2,10 @@ export const projects = [
   {
     title: 'Proxima Threads',
     image: './ThreadsPreview.png',
+    video: 'https://www.youtube.com/embed/ddWlRRpuZJY?si=F299sYQ9-LfKyACn',
     site: 'https://proxima-threads.vercel.app/',
     repo: 'https://github.com/DenysSkachko/Next-Threads',
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Zod', 'Git', 'Github', 'Vercel'],
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Zod', 'Git', 'Github', 'Vercel', 'Clerk', 'UploadThing', 'Mongoose'],
   },
   {
     title: 'D&D Create',
@@ -17,7 +18,7 @@ export const projects = [
   {
     title: 'Playground',
     image: './playground.jpg',
-    video: 'https://www.youtube.com/embed/d1Pdot0wTQg?si=64P6CXnGNVegSO4p',
+    video: 'https://www.youtube.com/embed/wPUKBqrqqKY?si=2PBucJA_xImiu0zW',
     site: 'https://proxima-playground.vercel.app/',
     repo: 'https://github.com/DenysSkachko/NextJS-Playground',
     tech: [
