@@ -45,7 +45,7 @@ export const projects = [
   {
     title: 'My CV Page',
     image: './project5.webp',
-    video: './project5.mp4',
+    video: 'https://www.youtube.com/embed/ywoardXF028?si=VkUTnkfADZN9cxDQ',
     site: 'https://denys-skachko.vercel.app/',
     repo: 'https://github.com/DenysSkachko/React.CV',
     tech: ['Tailwind CSS', 'JavaScript', 'React', 'Vite', 'Framer Motion', 'GSAP', 'Vercel', 'npm', 'GitHub', 'Git'],
