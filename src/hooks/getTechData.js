@@ -4,7 +4,7 @@ export function getTechData(techList) {
   const allSkills = [
     ...skillsData.main,
     ...skillsData.tools,
-    ...skillsData.config,
+    ...skillsData.backend,
     ...skillsData.other,
     ...skillsData.libs,
   ]

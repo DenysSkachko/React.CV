@@ -1,21 +1,13 @@
 export const tabs = [
   { id: 'main', label: 'Main' },
   { id: 'tools', label: 'Tools' },
-  { id: 'config', label: 'Config' },
+  { id: 'backend', label: 'Backend' },
   { id: 'libs', label: 'Libs' },
   { id: 'other', label: 'Others' },
 ]
 
 export const skillsData = {
   main: [
-    {
-      title: 'HTML5',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-    },
-    {
-      title: 'CSS3',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-    },
     {
       title: 'JavaScript',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
@@ -32,17 +24,26 @@ export const skillsData = {
       title: 'TypeScript',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     },
-    {
-      title: 'SASS',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
-    },
+
     {
       title: 'Next.js',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
     },
     {
-      title: 'PHP',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+      title: 'Vercel',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg',
+    },
+    {
+      title: 'Zustand',
+      logo: 'https://github.com/pmndrs/zustand/blob/main/examples/demo/public/logo512.png?raw=true',
+    },
+    {
+      title: 'Vite',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg',
+    },
+    {
+      title: 'GitHub',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/github/github-original.svg',
     },
   ],
   tools: [
@@ -51,31 +52,9 @@ export const skillsData = {
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
     },
     {
-      title: 'GitHub',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/github/github-original.svg',
-    },
-    {
       title: 'NPM',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg',
     },
-    {
-      title: 'Vite',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg',
-    },
-    {
-      title: 'WordPress',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg',
-    },
-    {
-      title: 'Vercel',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg',
-    },
-    {
-      title: 'Supabase',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
-    },
-  ],
-  config: [
     {
       title: 'Prettier',
       logo: 'https://unpkg.com/simple-icons@v11/icons/prettier.svg',
@@ -107,15 +86,45 @@ export const skillsData = {
       logo: 'https://proxima-playground.vercel.app/_next/image?url=https%3A%2F%2Fyanfjrlafpkrvgsikbnz.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Ftech%2F%2Fzod.webp&w=96&q=75',
     },
     {
-      title: 'TanStack Query',
-      logo: 'https://images.seeklogo.com/logo-png/43/1/react-query-logo-png_seeklogo-435661.png',
+      title: 'Axios',
+      logo: '/axios.svg',
     },
     {
-      title: 'Zustand',
-      logo: 'https://github.com/pmndrs/zustand/blob/main/examples/demo/public/logo512.png?raw=true',
+      title: 'TanStack Query',
+      logo: '/tanstack.svg',
+    },
+    {
+      title: 'Mongoose',
+      logo: '/mongoose.svg',
+    },
+  ],
+  backend: [
+    {
+      title: 'WordPress',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg',
+    },
+    {
+      title: 'MongoDB',
+      logo: '/mongodb.svg',
+    },
+    {
+      title: 'Node.js',
+      logo: '/nodejs.svg',
+    },
+    {
+      title: 'Express.js',
+      logo: '/express.svg',
+    },
+    {
+      title: 'Supabase',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
     },
   ],
   other: [
+    {
+      title: 'Figma',
+      logo: '/figma.svg',
+    },
     {
       title: 'Photoshop',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
@@ -132,9 +141,22 @@ export const skillsData = {
       title: 'UploadThing',
       logo: '/uploadthing.svg',
     },
+
     {
-      title: 'Mongoose',
-      logo: '/mongoose.svg',
+      title: 'HTML5',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+    },
+    {
+      title: 'CSS3',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+    },
+    {
+      title: 'SASS',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
+    },
+    {
+      title: 'PHP',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
     },
   ],
 }

@@ -35,6 +35,14 @@ export const projects = [
     ],
   },
   {
+    title: 'RealTime Chat App',
+    image: './ChatPreview.png',
+    video: '',
+    site: 'https://proxima-chat-app.onrender.com/',
+    repo: 'https://github.com/DenysSkachko/FullStack-MERN-Chat-App',
+    tech: ['React', 'JavaScript', 'Tailwind CSS', 'Mongoose', 'Zustand', 'MongoDB', 'Node.js', 'Express.js', 'Git', 'Github'],
+  },
+  {
     title: `Teacher's Planner`,
     image: './project4.webp',
     video: './project4.mp4',
